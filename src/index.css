@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamonds&family=Josefin+Sans&family=Nunito&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =================
+NAVBAR
+====================
+*/
+.navbar {
+  padding-inline: 4%;
+}
+.logo {
+  font-family: 'EB Garamond', serif;
+  /* font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Nunito', sans-serif; */
+}
+.nav-menu {
+  padding-inline: 5%;
+  transition: transform 0.5s;
+}
+.nav-link {
+  font-family: 'Nunito', sans-serif;
+}
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 0.15rem;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
