@@ -33,3 +33,4 @@ export const socials = [
     href: 'https://www.linkedin.com',
   },
 ]
+export const myself = ['Gideon Onita', 'Front-end Developer', 'Freelancer']

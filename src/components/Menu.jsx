@@ -7,13 +7,13 @@ const Menu = () => {
 
   return (
     <div
-      class="md:hidden nav-menu origin-top shadow-lg py-4"
+      className="md:hidden nav-menu origin-top shadow-lg py-4 absolute top-full left-0 w-screen "
       style={{ transform: navMenu ? 'scaleY(1)' : 'scaleY(0)' }}
     >
-      <ul class="flex flex-col capitalize gap-y-1 bg-base-100 ">
+      <ul className="flex flex-col capitalize gap-y-1 bg-base-100 ">
         {sections.map(({ id, section, href }) => {
           return (
-            <li key={id} class="hover:text-primary max-w-max">
+            <li key={id} className="hover:text-primary max-w-max">
               <NavLink to={href}>{section}</NavLink>
             </li>
           )
