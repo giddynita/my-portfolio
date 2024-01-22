@@ -40,3 +40,7 @@ NAVBAR
 HERO
 ====================
 */
+.text {
+  border-right: 2px solid black;
+  transition: all 1s;
+}

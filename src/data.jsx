@@ -33,4 +33,8 @@ export const socials = [
     href: 'https://www.linkedin.com',
   },
 ]
-export const myself = ['Gideon Onita', 'Front-end Developer', 'Freelancer']
+export const profile = [
+  "I'm Gideon Onita.",
+  "I'm a Front-end Developer.",
+  "I'm a Freelancer",
+]
