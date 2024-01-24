@@ -1,6 +1,5 @@
 import AppContext from '../assets/globalContext'
 import Navbar from '../components/Navbar'
-import Menu from '../components/Menu'
 import SideNavBar from '../components/SideNavBar'
 import { Outlet } from 'react-router-dom'
 
@@ -9,7 +8,7 @@ const HomeLayout = () => {
     <AppContext>
       <Navbar />
       <SideNavBar />
-      <div>
+      <div className=" min-h-screen bg-base-300">
         <Outlet />
       </div>
     </AppContext>

@@ -40,7 +40,14 @@ NAVBAR
 HERO
 ====================
 */
-.text {
-  border-right: 2px solid black;
-  transition: all 1s;
+@media screen and (max-width: 1024px) {
+  .hero-bg {
+    width: 100% !important;
+  }
+}
+.hero-bg {
+  transition: all 0.3s;
+}
+.active {
+  color: red;
 }
