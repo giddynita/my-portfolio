@@ -36,18 +36,28 @@ NAVBAR
 .side-bar {
   transition: all 0.3s;
 }
+
+/* =================
+LANDING PAGE
+====================
+*/
+.landing {
+  transition: all 0.3s;
+}
+@media screen and (max-width: 1024px) {
+  .landing {
+    width: 100% !important;
+  }
+}
 /* =================
 HERO
 ====================
 */
-@media screen and (max-width: 1024px) {
-  .hero-bg {
-    width: 100% !important;
-  }
-}
-.hero-bg {
-  transition: all 0.3s;
-}
+
 .active {
   color: red;
+}
+
+#about {
+  scroll-margin-top: 2rem !important;
 }

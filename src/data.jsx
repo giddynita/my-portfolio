@@ -2,13 +2,13 @@ import { nanoid } from 'nanoid'
 import { FaFacebookF } from 'react-icons/fa6'
 import { FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 
-export const sections = [
-  { id: nanoid(), section: 'home', href: '/' },
-  { id: nanoid(), section: 'about me', href: '/about' },
-  { id: nanoid(), section: 'service', href: '/skills' },
-  { id: nanoid(), section: 'portfolio', href: '/portfolio' },
-  { id: nanoid(), section: 'blog', href: '/blog' },
-  { id: nanoid(), section: 'contact', href: '/contact' },
+export const navlinks = [
+  { id: nanoid(), section: 'home', href: '#landing' },
+  { id: nanoid(), section: 'about me', href: '#about' },
+  { id: nanoid(), section: 'service', href: '#skills' },
+  { id: nanoid(), section: 'portfolio', href: '#portfolio' },
+  { id: nanoid(), section: 'blog', href: '#blog' },
+  { id: nanoid(), section: 'contact', href: '#contact' },
 ]
 
 export const socials = [
@@ -33,3 +33,10 @@ export const socials = [
     href: 'https://www.linkedin.com',
   },
 ]
+export const hero = {
+  h1: 'Welcome',
+  name: "I'm Gideon Onita",
+  profession: "I'm a Front-end developer",
+  location: 'based in Lagos, Nigeria.',
+  aboutBtn: 'About Me',
+}

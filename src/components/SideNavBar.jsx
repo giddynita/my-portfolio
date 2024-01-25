@@ -3,6 +3,8 @@ import { useContext } from 'react'
 import { GlobalContext } from '../assets/globalContext'
 import Navlinks from './Navlinks'
 import Socials from './Socials'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 const SideNavBar = () => {
   const { navbar, closeSideNavbar } = useContext(GlobalContext)
   return (
@@ -11,11 +13,11 @@ const SideNavBar = () => {
         className=" hidden fixed lg:flex lg:justify-between lg:flex-col -left-1/2 bg-base-300 h-screen w-1/4 items-center side-bar z-50 "
         style={{ left: navbar && '0' }}
       >
-        <a href="/" className="w-full text-center ">
+        <AnchorLink href="#landing" className="w-full text-center ">
           <h3 className="logo text-sky-600 font-bold tracking-wide text-2xl bg-base-100 py-3">
             De<span className="text-emerald-600">Coda</span>
           </h3>
-        </a>
+        </AnchorLink>
         <Navlinks />
         <Socials />
         <button

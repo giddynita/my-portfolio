@@ -8,7 +8,7 @@ const HomeLayout = () => {
     <AppContext>
       <Navbar />
       <SideNavBar />
-      <div className=" min-h-screen bg-base-300">
+      <div className="bg-base-300 min-h-screen">
         <Outlet />
       </div>
     </AppContext>
