@@ -15,11 +15,12 @@ const Hero = () => {
         deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 100 }}
         style={{
           whiteSpace: 'pre-line',
-          fontSize: '2.25rem',
           fontWeight: '600',
           marginBlock: '0.4rem 0.2rem',
+          textAlign: 'center',
         }}
         repeat={Infinity}
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
       />
       <small>{location}</small>
       <AnchorLink href="#about">

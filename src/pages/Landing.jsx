@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../assets/globalContext'
+import Skills from '../components/Skills'
 import About from '../components/About'
 import Hero from '../components/Hero'
 
@@ -13,6 +14,7 @@ const Landing = () => {
     >
       <Hero />
       <About />
+      <Skills />
     </div>
   )
 }

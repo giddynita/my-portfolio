@@ -8,7 +8,7 @@ NAVBAR
 ====================
 */
 .navbar {
-  padding-inline: 4%;
+  padding-inline: 6%;
 }
 .logo {
   font-family: 'EB Garamond', serif;
@@ -16,7 +16,7 @@ NAVBAR
   font-family: 'Nunito', sans-serif; */
 }
 .nav-menu {
-  padding-inline: 5%;
+  padding-inline: 7%;
   transition: transform 0.3s;
 }
 .nav-link {
@@ -50,14 +50,13 @@ LANDING PAGE
   }
 }
 /* =================
-HERO
+ABOUT
 ====================
 */
-
+.section {
+  padding-inline: 3%;
+}
 .active {
   color: red;
-}
-
-#about {
-  scroll-margin-top: 2rem !important;
+  font-size: minmax();
 }
