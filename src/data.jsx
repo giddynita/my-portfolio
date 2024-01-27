@@ -6,7 +6,7 @@ import picture from './assets/images/image.jpg'
 export const navlinks = [
   { id: nanoid(), section: 'home', href: '#landing' },
   { id: nanoid(), section: 'about me', href: '#about' },
-  { id: nanoid(), section: 'services', href: '#services' },
+  { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
   { id: nanoid(), section: 'blog', href: '#blog' },
   { id: nanoid(), section: 'contact', href: '#contact' },
@@ -56,14 +56,18 @@ export const aboutSection = {
 }
 export const skillSection = {
   sectionTitle: 'skills',
-  sectionSubtitle: 'what i do',
+  sectionSubtitle: 'my expertise',
   skills: [
-    { type: 'HTML5/CSS3', progress: '98' },
-    { type: 'Tailwind CSS', progress: '90' },
-    { type: 'JavaScript ES6+', progress: '85' },
-    { type: 'React JS', progress: '95' },
-    { type: 'Responsive Design', progress: '100' },
-    { type: 'Git', progress: '90' },
-    { type: 'Figma', progress: '90' },
+    { id: nanoid(), type: 'HTML5/CSS3', progress: '98' },
+    { id: nanoid(), type: 'Tailwind CSS', progress: '90' },
+    { id: nanoid(), type: 'JavaScript ES6+', progress: '85' },
+    { id: nanoid(), type: 'React JS', progress: '95' },
+    { id: nanoid(), type: 'Responsive Design', progress: '100' },
+    { id: nanoid(), type: 'Git', progress: '90' },
+    { id: nanoid(), type: 'Figma', progress: '90' },
   ],
+}
+export const portfolioSection = {
+  sectionTitle: 'portfolio',
+  sectionSubtitle: 'my projects',
 }

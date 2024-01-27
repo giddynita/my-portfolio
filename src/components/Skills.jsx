@@ -1,28 +1,17 @@
 import { skillSection } from '../data'
 import Heading from './Heading'
+import SingleSkill from './SIngleSkill'
 
 const Skills = () => {
-  const { sectionTitle, sectionSubtitle, skills, progress } = skillSection
+  const { sectionTitle, sectionSubtitle, skills } = skillSection
   return (
-    <section className="pt-14 pb-14 bg-base-200/50   section">
+    <section id="skills" className="pt-14 pb-14 bg-base-200/50   section">
       <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-screen-sm md:max-w-screen-lg  mx-auto">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-x-12 max-w-screen-sm md:max-w-screen-lg  mx-auto">
         {skills.map((skill) => {
-          const { type, progress } = skill
-          return (
-            <div className="grid gap-2 ">
-              <div className="flex justify-between">
-                {type} <span>{`${progress}%`}</span>
-              </div>
-              <progress
-                className="progress progress-primary w-full bg-base-300/75"
-                value={progress}
-                max="100"
-              ></progress>
-            </div>
-          )
+          return <SingleSkill key={skill.id} {...skill} />
         })}
-      </div>
+      </ul>
     </section>
   )
 }

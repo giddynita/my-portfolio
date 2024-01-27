@@ -1,10 +1,11 @@
 import { navlinks } from '../data'
 import { useContext } from 'react'
 import { GlobalContext } from '../assets/globalContext'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+
+import SingleNavlink from './SingleNavlink'
 
 const Menu = () => {
-  const { navMenu, showNavMenu } = useContext(GlobalContext)
+  const { navMenu } = useContext(GlobalContext)
 
   return (
     <div
@@ -12,16 +13,8 @@ const Menu = () => {
       style={{ transform: navMenu ? 'scaleY(1)' : 'scaleY(0)' }}
     >
       <ul className="flex flex-col capitalize gap-y-1 ">
-        {navlinks.map(({ id, section, href }) => {
-          return (
-            <li
-              key={id}
-              className="hover:text-primary max-w-max"
-              onClick={showNavMenu}
-            >
-              <AnchorLink href={href}>{section}</AnchorLink>
-            </li>
-          )
+        {navlinks.map((navlink) => {
+          return <SingleNavlink key={navlink.id} {...navlink} />
         })}
       </ul>
     </div>

@@ -3,6 +3,7 @@ import { GlobalContext } from '../assets/globalContext'
 import Skills from '../components/Skills'
 import About from '../components/About'
 import Hero from '../components/Hero'
+import Portfolio from '../components/Portfolio'
 
 const Landing = () => {
   const { navbar } = useContext(GlobalContext)
@@ -15,6 +16,7 @@ const Landing = () => {
       <Hero />
       <About />
       <Skills />
+      <Portfolio />
     </div>
   )
 }
