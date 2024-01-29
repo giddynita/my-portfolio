@@ -8,7 +8,7 @@ const client = createClient({
 })
 
 const useFetchProjects = () => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['portfolio'],
     queryFn: async () => {
       const response = await client.getEntries({ content_type: 'portfolio' })
@@ -24,7 +24,7 @@ const useFetchProjects = () => {
     },
   })
 
-  return { data }
+  return { data, isLoading }
 }
 
 export default useFetchProjects

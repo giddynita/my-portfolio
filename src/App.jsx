@@ -1,7 +1,15 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Layout, Error, Landing } from './pages'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-const queryClient = new QueryClient()
+import { loader } from './pages/Landing'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5,
+    },
+  },
+})
 
 const router = createBrowserRouter([
   {
@@ -12,6 +20,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        loader: loader(queryClient),
       },
     ],
   },

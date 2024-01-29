@@ -1,6 +1,6 @@
 const Heading = ({ sectionTitle, sectionSubtitle }) => {
   return (
-    <section className="relative ">
+    <section className="relative heading">
       <h1 className="  text-6xl sm:text-7xl md:text-8xl  uppercase pt-1 text-base-content/5 font-semibold relative text-center  mb-10 whitespace-nowrap">
         {sectionTitle}
       </h1>

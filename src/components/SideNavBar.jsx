@@ -10,7 +10,7 @@ const SideNavBar = () => {
   return (
     <>
       <nav
-        className=" hidden fixed lg:flex lg:justify-between lg:flex-col -left-1/2 bg-base-300 h-screen w-1/4 items-center side-bar z-50 "
+        className=" hidden fixed lg:flex lg:justify-between lg:flex-col -left-1/2 bg-base-300 h-screen   items-center side-bar z-50 "
         style={{ left: navbar && '0' }}
       >
         <AnchorLink href="#landing" className="w-full text-center ">
@@ -23,7 +23,7 @@ const SideNavBar = () => {
         <button
           className="absolute left-full bottom-7 lg:text-base-500 pr-1 py-0.5 lg:bg-base-300 rounded-r-full text-500 hidden lg:block"
           onClick={closeSideNavbar}
-          style={{ left: navbar || '200%' }}
+          style={{ left: navbar || '250%' }}
         >
           {navbar ? <MdKeyboardArrowLeft /> : <MdKeyboardArrowRight />}
         </button>

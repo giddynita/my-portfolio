@@ -3,20 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+}
 /* =================
 NAVBAR
 ====================
 */
 .navbar {
-  padding-inline: 10%;
+  padding-inline: 6%;
 }
 .logo {
   font-family: 'EB Garamond', serif;
-  /* font-family: 'Josefin Sans', sans-serif;
-  font-family: 'Nunito', sans-serif; */
 }
 .nav-menu {
-  padding-inline: 10%;
+  padding-inline: 6%;
   transition: transform 0.3s;
 }
 .nav-link {
@@ -35,6 +36,7 @@ NAVBAR
 }
 .side-bar {
   transition: all 0.3s;
+  width: 20%;
 }
 
 /* =================
@@ -42,6 +44,7 @@ LANDING PAGE
 ====================
 */
 .landing {
+  font-family: 'Nunito', sans-serif;
   transition: all 0.3s;
 }
 @media screen and (max-width: 1024px) {
@@ -59,4 +62,10 @@ ABOUT
 .active {
   color: red;
   font-size: minmax();
+}
+
+:is(.project:hover) .upper-layer,
+:is(.project:hover) .lower-layer {
+  opacity: 1;
+  transition: all 0.3s;
 }

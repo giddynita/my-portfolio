@@ -8,6 +8,7 @@ export const navlinks = [
   { id: nanoid(), section: 'about me', href: '#about' },
   { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
+  { id: nanoid(), section: 'testimonials', href: '#testimonials' },
   { id: nanoid(), section: 'blog', href: '#blog' },
   { id: nanoid(), section: 'contact', href: '#contact' },
 ]
@@ -63,11 +64,15 @@ export const skillSection = {
     { id: nanoid(), type: 'JavaScript ES6+', progress: '85' },
     { id: nanoid(), type: 'React JS', progress: '95' },
     { id: nanoid(), type: 'Responsive Design', progress: '100' },
-    { id: nanoid(), type: 'Git', progress: '90' },
+    { id: nanoid(), type: 'Git', progress: '80' },
     { id: nanoid(), type: 'Figma', progress: '90' },
   ],
 }
 export const portfolioSection = {
   sectionTitle: 'portfolio',
   sectionSubtitle: 'my projects',
+}
+export const testimonialSection = {
+  sectionTitle: 'testimonials',
+  sectionSubtitle: 'clients feedback',
 }
