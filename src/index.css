@@ -3,8 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.heading {
-  font-family: 'Josefin Sans', sans-serif;
+:root {
+  --carouselColor: #22c55e;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --carouselColor: #3b82f6;
+  }
 }
 /* =================
 NAVBAR
@@ -47,25 +52,53 @@ LANDING PAGE
   font-family: 'Nunito', sans-serif;
   transition: all 0.3s;
 }
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.section {
+  padding-inline: 7%;
+}
+
 @media screen and (max-width: 1024px) {
   .landing {
     width: 100% !important;
   }
 }
 /* =================
-ABOUT
+LANDING PAGE- PORTFOLIO
 ====================
 */
-.section {
-  padding-inline: 7%;
-}
-.active {
-  color: red;
-  font-size: minmax();
-}
 
 :is(.project:hover) .upper-layer,
 :is(.project:hover) .lower-layer {
   opacity: 1;
   transition: all 0.3s;
+}
+
+/* =================
+LANDING PAGE- REVIEWS
+====================
+*/
+.slick-dots {
+  background: red;
+  display: absolute;
+  bottom: 0;
+  z-index: 90;
+}
+.slick-dots li button:before {
+  color: var(--carouselColor) !important;
+  font-size: 8px !important;
+  padding-top: 2px;
+  width: 16px !important;
+  height: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slick-dots li.slick-active button:before {
+  border: 1px solid var(--carouselColor);
+  border-radius: 50%;
+}
+.carousel {
+  justify-items: center !important;
 }

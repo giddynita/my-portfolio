@@ -8,7 +8,7 @@ export const navlinks = [
   { id: nanoid(), section: 'about me', href: '#about' },
   { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
-  { id: nanoid(), section: 'testimonials', href: '#testimonials' },
+  { id: nanoid(), section: 'reviews', href: '#reviews' },
   { id: nanoid(), section: 'blog', href: '#blog' },
   { id: nanoid(), section: 'contact', href: '#contact' },
 ]
@@ -72,7 +72,7 @@ export const portfolioSection = {
   sectionTitle: 'portfolio',
   sectionSubtitle: 'my projects',
 }
-export const testimonialSection = {
-  sectionTitle: 'testimonials',
+export const reviewsSection = {
+  sectionTitle: 'reviews',
   sectionSubtitle: 'clients feedback',
 }

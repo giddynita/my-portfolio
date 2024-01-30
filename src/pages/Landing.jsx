@@ -4,31 +4,49 @@ import Skills from '../components/Skills'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import Portfolio from '../components/Portfolio'
-import Testimonials from '../components/Testimonials'
+import Reviews from '../components/Reviews'
 import { useLoaderData } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { createClient } from 'contentful'
 
+const client = createClient({
+  space: 'dc28dkbw08sq',
+  environment: 'master',
+  accessToken: `${import.meta.env.VITE_API_KEY}`,
+})
 const queryData = () => {
-  const client = createClient({
-    space: 'dc28dkbw08sq',
-    environment: 'master',
-    accessToken: `${import.meta.env.VITE_API_KEY}`,
-  })
-
   return {
     queryKey: ['portfolio'],
     queryFn: async () => {
       const response = await client.getEntries({ content_type: 'portfolio' })
-      const project = response.items.map((content) => {
-        const { framework, github, preview, image } = content.fields
+      const contents = response.items.map((content) => {
+        const {
+          framework,
+          github,
+          preview,
+          image,
+          title,
+          about,
+          name,
+          rating,
+          review,
+        } = content.fields
         const id = content.sys.id
         const img = image?.fields?.file?.url
-
-        return { id, framework, github, preview, img }
+        return {
+          id,
+          framework,
+          github,
+          preview,
+          img,
+          title,
+          about,
+          name,
+          rating,
+          review,
+        }
       })
-
-      return project
+      return contents
     },
   }
 }
@@ -42,9 +60,13 @@ const Landing = () => {
   const date = useLoaderData()
   console.log(date)
   const { navbar } = useContext(GlobalContext)
-  const { data: projects } = useQuery(queryData())
-  console.log(projects)
-  if (!projects) {
+  const { data } = useQuery(queryData())
+  const projects = data?.filter((items) => items.preview !== undefined)
+  const reviews = data?.filter((items) => items.about !== undefined)
+
+  console.log(reviews)
+
+  if (!data) {
     return (
       <div
         className=" w-screen h-screen bg-base-100 text-base-content flex justify-center items-center pt-32  landing"
@@ -64,7 +86,7 @@ const Landing = () => {
       <About />
       <Skills />
       <Portfolio projects={projects} />
-      <Testimonials />
+      <Reviews reviews={reviews} />
     </div>
   )
 }
