@@ -1,7 +1,10 @@
 import { nanoid } from 'nanoid'
-import { FaFacebookF } from 'react-icons/fa6'
-import { FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { FaGithub, FaXTwitter } from 'react-icons/fa6'
+import { FaLinkedinIn } from 'react-icons/fa'
 import picture from './assets/images/image.jpg'
+import { MdEmail, MdLocalPhone, MdLocationOn } from 'react-icons/md'
+import { IoShareSocial } from 'react-icons/io5'
+import Socials from './components/Socials'
 
 export const navlinks = [
   { id: nanoid(), section: 'home', href: '#landing' },
@@ -9,42 +12,36 @@ export const navlinks = [
   { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
   { id: nanoid(), section: 'reviews', href: '#reviews' },
-  { id: nanoid(), section: 'blog', href: '#blog' },
   { id: nanoid(), section: 'contact', href: '#contact' },
 ]
 
 export const socials = [
   {
     id: nanoid(),
-    icon: <FaFacebookF />,
-    href: 'https://www.facebook.com',
+    icon: <FaGithub />,
+    href: 'https://www.github.com/giddynita',
   },
   {
     id: nanoid(),
-    icon: <FaInstagram />,
-    href: 'https://www.instagram.com',
-  },
-  {
-    id: nanoid(),
-    icon: <FaTwitter />,
-    href: 'https://www.twitter.com',
+    icon: <FaXTwitter />,
+    href: 'https://www.twitter.com/giddynita',
   },
   {
     id: nanoid(),
     icon: <FaLinkedinIn />,
-    href: 'https://www.linkedin.com',
+    href: 'https://ng.linkedin.com/in/gideon-onita',
   },
 ]
 export const hero = {
   h1: 'Welcome',
   name: "I'm Gideon Onita",
-  profession: "I'm a Front-end Developer",
+  profession: "I'm a Front-end Web Developer",
   location: 'based in Lagos, Nigeria.',
-  aboutBtn: 'About Me',
+  aboutBtn: 'Contact Me',
 }
 export const aboutSection = {
   sectionTitle: 'about me',
-  sectionSubtitle: 'know me more',
+  sectionSubtitle: 'Know Me More',
   profile: {
     iam: "I'm",
     name: 'gideon onita,',
@@ -57,7 +54,7 @@ export const aboutSection = {
 }
 export const skillSection = {
   sectionTitle: 'skills',
-  sectionSubtitle: 'my expertise',
+  sectionSubtitle: 'My Expertise',
   skills: [
     { id: nanoid(), type: 'HTML5/CSS3', progress: '98' },
     { id: nanoid(), type: 'Tailwind CSS', progress: '90' },
@@ -70,9 +67,43 @@ export const skillSection = {
 }
 export const portfolioSection = {
   sectionTitle: 'portfolio',
-  sectionSubtitle: 'my projects',
+  sectionSubtitle: 'My Projects',
 }
 export const reviewsSection = {
   sectionTitle: 'reviews',
-  sectionSubtitle: 'clients feedback',
+  sectionSubtitle: 'Clients Feedback',
+}
+export const contactSection = {
+  sectionTitle: 'contact',
+  sectionSubtitle: 'Get in Touch',
+  contactInfo: [
+    {
+      id: nanoid(),
+      title: 'Address:',
+      info: 'Plot 132, Ayodele Odubiyi Street, Lekki Phase 1, Lekki, Lagos',
+      icon: <MdLocationOn />,
+      href: '',
+    },
+    {
+      id: nanoid(),
+      title: 'Mail:',
+      info: 'onitagideon30@gmail.com',
+      icon: <MdEmail />,
+      href: 'mailto:onitagideon30@gmail.com',
+    },
+    {
+      id: nanoid(),
+      title: 'Phone:',
+      info: '+234 808 964 6300',
+      icon: <MdLocalPhone />,
+      href: 'tel:+2348089646300',
+    },
+    {
+      id: nanoid(),
+      title: 'Social:',
+      icon: <IoShareSocial />,
+      info: <Socials />,
+      href: '',
+    },
+  ],
 }

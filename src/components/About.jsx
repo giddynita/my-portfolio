@@ -19,10 +19,14 @@ const About = () => {
             {profile.profession}
           </p>
           <p className="text-lg leading-relaxed">{about}</p>
-
-          <button className="bg-primary px-6 py-3 rounded-full text-white mt-5 hover:text-primary-content hover:text- text-lg">
-            Download CV
-          </button>
+          <a href="/" download>
+            <button
+              className="bg-primary px-6 py-3 rounded-full text-white mt-5 hover:text-primary-content hover:text- text-lg cursor-not-allowed "
+              disabled
+            >
+              Download CV
+            </button>
+          </a>
         </div>
       </div>
     </section>

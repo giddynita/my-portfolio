@@ -6,7 +6,9 @@ const Socials = () => {
       {socials.map(({ id, icon, href }) => {
         return (
           <li key={id} className="hover:text-primary cursor-pointer text-">
-            <a href={href}>{icon}</a>
+            <a href={href} target="_blank">
+              {icon}
+            </a>
           </li>
         )
       })}

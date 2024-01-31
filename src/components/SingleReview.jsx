@@ -2,7 +2,7 @@ import { TiStarFullOutline } from 'react-icons/ti'
 
 const SingleReview = ({ about, img, name, review }) => {
   return (
-    <article className="bg-base-300 rounded-md text-base-content relative p-8 w-64  ">
+    <article className="bg-base-300 rounded-md text-base-content relative p-8 pt-10 carousel-single w-4/5  ">
       <figure className="flex gap-3 items-center">
         <img src={img} alt={name} className="rounded-full  h-12 w-12" />
         <figcaption>

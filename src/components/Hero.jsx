@@ -32,7 +32,7 @@ const Hero = () => {
         </button>
       </AnchorLink>
       <AnchorLink href="#about">
-        <svg className=" absolute bottom-0 animate-bounce w-4 h-10 text-primary">
+        <svg className=" absolute bottom-0 animate w-4 h-10 text-primary">
           <IoArrowDownCircleOutline />
         </svg>
       </AnchorLink>

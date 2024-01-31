@@ -80,10 +80,10 @@ LANDING PAGE- REVIEWS
 ====================
 */
 .slick-dots {
-  background: red;
-  display: absolute;
-  bottom: 0;
-  z-index: 90;
+  /*  background-color: red; */
+  /* width: max-content !important;
+  margin-inline: auto !important; */
+  top: 102% !important;
 }
 .slick-dots li button:before {
   color: var(--carouselColor) !important;
@@ -99,6 +99,27 @@ LANDING PAGE- REVIEWS
   border: 1px solid var(--carouselColor);
   border-radius: 50%;
 }
-.carousel {
-  justify-items: center !important;
+.carousel-single {
+  width: 95%;
+}
+
+.animate {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(12px);
+  }
+}
+.active {
+  color: red !important;
+}
+
+.form:focus {
+  border: none;
+  outline: 1px solid var(--carouselColor);
 }

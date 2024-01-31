@@ -8,6 +8,8 @@ import Reviews from '../components/Reviews'
 import { useLoaderData } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { createClient } from 'contentful'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -59,13 +61,14 @@ export const loader = (queryClient) => async () => {
 const Landing = () => {
   const date = useLoaderData()
   console.log(date)
-  const { navbar } = useContext(GlobalContext)
+
   const { data } = useQuery(queryData())
   const projects = data?.filter((items) => items.preview !== undefined)
   const reviews = data?.filter((items) => items.about !== undefined)
 
   console.log(reviews)
-
+  const { navbar } = useContext(GlobalContext)
+  console.log(navbar)
   if (!data) {
     return (
       <div
@@ -76,6 +79,7 @@ const Landing = () => {
       </div>
     )
   }
+
   return (
     <div
       id="landing"
@@ -87,6 +91,8 @@ const Landing = () => {
       <Skills />
       <Portfolio projects={projects} />
       <Reviews reviews={reviews} />
+      <Contact />
+      <Footer />
     </div>
   )
 }
