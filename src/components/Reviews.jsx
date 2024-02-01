@@ -66,7 +66,7 @@ const Reviews = ({ reviews }) => {
   return (
     <section
       id="reviews"
-      className="pt-14 pb-14 section m-auto bg-base-200/50 "
+      className="pt-14 pb-14 section m-auto bg-base-200/70 "
     >
       <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
       <Slider {...settings} className="">

@@ -9,7 +9,7 @@ const About = () => {
       <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
       <div className="  flex flex-col items-center md:items-start justify-center gap-4 md:gap-12 md:flex-row max-w-screen-sm md:max-w-screen-xl mx-auto">
         <figure className="rounded-md w-3/4 md:w-1/2 lg:w-1/3 ">
-          <img src={img} alt={title} className="rounded-md" />
+          <img src={img} alt={title} className="rounded-md" loading="lazy" />
         </figure>
 
         <div className="md:w-1/2">

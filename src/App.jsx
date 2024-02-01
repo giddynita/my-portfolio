@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Layout, Error, Landing } from './pages'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { loader } from './pages/Landing'
+import AppContext from './assets/globalContext'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <AppContext>
+        <RouterProvider router={router} />
+      </AppContext>
     </QueryClientProvider>
   )
 }

@@ -8,7 +8,7 @@ const Contact = () => {
   const navigation = useNavigation()
   const isSubmitting = navigation.state === 'submitting'
   return (
-    <section id="portfolio" className="pt-14 pb-14 section m-auto">
+    <section id="contact" className="pt-14 pb-14 section m-auto bg-base-100">
       <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
       <div className="flex flex-col gap-10 md:flex-row">
         <div className="md:w-1/2">
@@ -27,7 +27,6 @@ const Contact = () => {
               required
             />
             <input
-              type="email"
               name="email"
               id="email"
               placeholder="Email"

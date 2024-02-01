@@ -5,7 +5,7 @@ import SingleSkill from './SIngleSkill'
 const Skills = () => {
   const { sectionTitle, sectionSubtitle, skills } = skillSection
   return (
-    <section id="skills" className="pt-14 pb-14 bg-base-200/50   section">
+    <section id="skills" className="pt-14 pb-14  bg-base-200/70   section">
       <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-x-12 max-w-screen-sm md:max-w-screen-xl mx-auto">
         {skills.map((skill) => {

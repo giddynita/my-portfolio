@@ -31,6 +31,7 @@ NAVBAR
 .nav-link::after {
   content: '';
   display: block;
+  top: 100%;
   width: 0%;
   height: 0.15rem;
   transition: all 0.2s;
@@ -122,4 +123,28 @@ LANDING PAGE- REVIEWS
 .form:focus {
   border: none;
   outline: 1px solid var(--carouselColor);
+}
+
+.active {
+  color: red !important;
+}
+
+.form:focus {
+  border: none;
+  outline: 1px solid var(--carouselColor);
+}
+.theme {
+  transition: all 0.3s;
+}
+.animateUp {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
 }

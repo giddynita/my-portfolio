@@ -5,7 +5,7 @@ import About from '../components/About'
 import Hero from '../components/Hero'
 import Portfolio from '../components/Portfolio'
 import Reviews from '../components/Reviews'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData, useNavigation } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { createClient } from 'contentful'
 import Contact from '../components/Contact'
@@ -59,23 +59,21 @@ export const loader = (queryClient) => async () => {
 }
 
 const Landing = () => {
-  const date = useLoaderData()
-  console.log(date)
-
   const { data } = useQuery(queryData())
   const projects = data?.filter((items) => items.preview !== undefined)
   const reviews = data?.filter((items) => items.about !== undefined)
-
-  console.log(reviews)
+  const navigation = useNavigation()
+  const isFetching = navigation.state === 'loading'
+  console.log(isFetching)
   const { navbar } = useContext(GlobalContext)
-  console.log(navbar)
   if (!data) {
     return (
       <div
-        className=" w-screen h-screen bg-base-100 text-base-content flex justify-center items-center pt-32  landing"
+        className=" absolute right-0 top-0 w-screen h-screen bg-base-100 text-base-content flex flex-col gap-3 justify-center items-center pt-32  landing"
         style={{ width: navbar ? '80%' : '100%' }}
       >
-        <div className="loading loading-spinner loading-sm"></div>
+        <div className="loading loading-spinner loading-sm text-primary "></div>
+        <h4 className="tracking-wide">LOADING</h4>
       </div>
     )
   }
@@ -91,6 +89,7 @@ const Landing = () => {
       <Skills />
       <Portfolio projects={projects} />
       <Reviews reviews={reviews} />
+
       <Contact />
       <Footer />
     </div>

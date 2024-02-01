@@ -23,7 +23,7 @@ const Hero = () => {
         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
       />
       <small>{location}</small>
-      <AnchorLink href="#about">
+      <AnchorLink href="#contact">
         <button
           type=""
           className="mt-7 border-primary border-2 rounded-full py-2 px-6 text-primary hover:bg-primary hover:text-white"
