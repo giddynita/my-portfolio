@@ -44,7 +44,13 @@ NAVBAR
   transition: all 0.3s;
   width: 20%;
 }
-
+/* =================
+THEME
+====================
+*/
+.theme {
+  transition: all 0.3s;
+}
 /* =================
 LANDING PAGE
 ====================
@@ -66,6 +72,23 @@ LANDING PAGE
   }
 }
 /* =================
+LANDING PAGE- HERO
+====================
+*/
+.animate {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(12px);
+  }
+}
+
+/* =================
 LANDING PAGE- PORTFOLIO
 ====================
 */
@@ -81,9 +104,6 @@ LANDING PAGE- REVIEWS
 ====================
 */
 .slick-dots {
-  /*  background-color: red; */
-  /* width: max-content !important;
-  margin-inline: auto !important; */
   top: 102% !important;
 }
 .slick-dots li button:before {
@@ -103,39 +123,10 @@ LANDING PAGE- REVIEWS
 .carousel-single {
   width: 95%;
 }
-
-.animate {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(12px);
-  }
-}
-.active {
-  color: red !important;
-}
-
-.form:focus {
-  border: none;
-  outline: 1px solid var(--carouselColor);
-}
-
-.active {
-  color: red !important;
-}
-
-.form:focus {
-  border: none;
-  outline: 1px solid var(--carouselColor);
-}
-.theme {
-  transition: all 0.3s;
-}
+/* =================
+LANDING PAGE- FOOTER
+====================
+*/
 .animateUp {
   animation: bounce 2s ease-in-out infinite;
 }

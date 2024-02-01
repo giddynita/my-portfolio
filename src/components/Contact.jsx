@@ -23,19 +23,19 @@ const Contact = () => {
               name="name"
               id="name"
               placeholder="Name"
-              className=" p-3 lg:w-1/2  border border-base-300 form"
+              className=" p-3 lg:w-1/2  border border-base-300 focus:border-primary focus:outline-none "
               required
             />
             <input
               name="email"
               id="email"
               placeholder="Email"
-              className=" p-3 lg:w-1/2 border border-base-300 form"
+              className=" p-3 lg:w-1/2 border border-base-300 focus:border-primary focus:outline-none "
               required
             />
           </div>
           <textarea
-            className="block w-full p-3 my-5 border border-base-300 form "
+            className="block w-full p-3 my-5 border border-base-300 focus:border-primary focus:outline-none  "
             placeholder="Message"
             name="message"
             id="message"

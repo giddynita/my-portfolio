@@ -7,7 +7,6 @@ import { useContext } from 'react'
 
 const HomeLayout = () => {
   const { theme } = useContext(GlobalContext)
-  console.log(theme)
   const navigation = useNavigation()
   const pageLoading = navigation.state === 'loading'
   return (

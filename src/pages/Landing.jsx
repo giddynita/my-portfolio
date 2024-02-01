@@ -53,18 +53,12 @@ const queryData = () => {
   }
 }
 
-export const loader = (queryClient) => async () => {
-  /* await queryClient.ensureQueryData(queryData()) */
-  return 'something'
-}
-
 const Landing = () => {
   const { data } = useQuery(queryData())
   const projects = data?.filter((items) => items.preview !== undefined)
   const reviews = data?.filter((items) => items.about !== undefined)
   const navigation = useNavigation()
   const isFetching = navigation.state === 'loading'
-  console.log(isFetching)
   const { navbar } = useContext(GlobalContext)
   if (!data) {
     return (

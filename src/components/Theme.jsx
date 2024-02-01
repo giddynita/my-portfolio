@@ -83,7 +83,7 @@ const Theme = () => {
         </button>
         <button
           type="button"
-          className="bg-gray-600 absolute right-full top-0 z-50 p-1.5 text-lg text-white rounded-l hover:text-gray-200"
+          className=" absolute right-full top-0 z-50 p-1.5 text-lg text-white rounded-l hover:text-gray-200"
           onClick={openThemeContainer}
         >
           <IoMdSettings />
