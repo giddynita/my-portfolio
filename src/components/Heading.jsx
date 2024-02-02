@@ -1,14 +1,14 @@
 const Heading = ({ sectionTitle, sectionSubtitle }) => {
   return (
     <section className="relative w-full h-max mt-3 mb-10 heading">
-      <h1 className="  text-4xl sm:text-5xl md:text-6xl  uppercase text-secondary/5 font-semibold relative text-center whitespace-nowrap">
+      <h1 className="  text-4xl sm:text-5xl md:text-6xl  uppercase text-base-content/10 font-semibold relative text-center whitespace-nowrap z-30">
         {sectionTitle}
       </h1>
-      <div className=" absolute w-full h-full flex flex-col items-center justify-center bottom-0 ">
-        <p className="text-2xl md:text-3xl font-semibold  text-base-content  whitespace-nowrap ">
+      <div className=" w-max flex flex-col items-center gap-1 relative">
+        <p className="text-lg font-semibold  text-base-content  whitespace-nowrap ">
           {sectionSubtitle}
         </p>
-        <span className="block bg-primary h-1 w-24 sm:w-24 rounded-full "></span>
+        <span className="absolute bg-primary h-1 w-full rounded-full bottom-0"></span>
       </div>
     </section>
   )
