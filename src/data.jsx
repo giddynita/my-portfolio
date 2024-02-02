@@ -53,7 +53,7 @@ export const aboutSection = {
   img: picture,
   title: 'Gideon Onita',
   about:
-    "Web development is my passion, and I am commited to creating user-friendly, accessible, and responsive web experience. As a ReactJs expert, I aim to continuing satisfying clients with exceptional results as I'm constantly pushing the boundaries of what's possible with this framework.",
+    "Web development is my passion, and I am commited to creating user-friendly, accessible, and responsive web experience. As a React Js expert, I aim to continuing satisfying clients with exceptional results as I'm constantly pushing the boundaries of what's possible with this framework.",
 }
 export const skillSection = {
   sectionTitle: 'skills',

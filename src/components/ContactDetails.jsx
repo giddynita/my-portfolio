@@ -18,17 +18,17 @@ const ContactDetails = ({ details }) => {
       </div>
       <div>
         <h5 className="mb-0.5 text-neutral-500">{title}</h5>
-        <div className="flex flex-row gap-1 items-center">
-          <a href={href} className="font-semibold text-base-content">
+        <div className="flex flex-row gap-1 items-center text-base-content ">
+          <a href={href} className="font-semibold hover:text-primary ">
             {info}
           </a>
-          <a href={href1} className="font-semibold text-base-content text-xl ">
+          <a href={href1} className="font-semibold  text-xl hover:text-primary">
             {social1}
           </a>
-          <a href={href2} className="font-semibold text-base-content">
+          <a href={href2} className="font-semibold hover:text-primary ">
             {social2}
           </a>
-          <a href={href3} className="font-semibold text-base-content text-xl">
+          <a href={href3} className="font-semibold  text-xl hover:text-primary">
             {social3}
           </a>
         </div>

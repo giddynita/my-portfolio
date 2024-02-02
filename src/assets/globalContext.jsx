@@ -5,7 +5,7 @@ const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
   const [themeContainer, setThemeContianer] = useState(false)
-  const [theme, setTheme] = useState('emerald')
+  const [theme, setTheme] = useState('')
   /* const [heroContent, setHeroContent] = useState(profile)
   const [textIndex, setTextIndex] = useState(0)
   const [letterIndex, setLetterIndex] = useState(0) */
