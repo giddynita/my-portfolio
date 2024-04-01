@@ -6,7 +6,7 @@ import { hero } from '../data'
 const Hero = () => {
   const { h1, name, profession, location, aboutBtn } = hero
   return (
-    <section className=" relative bg-[url('./assets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center text-white h-screen ">
+    <section className=" relative bg-[url('./assets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center text-white h-screen">
       <h1 className="text-xl ">{h1}</h1>
       <TypeAnimation
         sequence={[name, 100, profession, 100]}
@@ -26,7 +26,7 @@ const Hero = () => {
       <AnchorLink href="#contact">
         <button
           type=""
-          className="mt-7 border-primary border-2 rounded-full py-2 px-6 text-primary hover:bg-primary hover:text-white"
+          className="mt-7 border-primary border-2 rounded-full py-2 px-6 text-secondary hover:bg-primary hover:text-white"
         >
           {aboutBtn}
         </button>

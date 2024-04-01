@@ -1,15 +1,52 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useState } from 'react'
 
 export const GlobalContext = createContext()
+
+const getThemeFromLocalStorage = () => {
+  const theme = localStorage.getItem('theme' || '')
+  document.documentElement.setAttribute('data-theme', theme)
+}
 const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
   const [themeContainer, setThemeContianer] = useState(false)
-  const [theme, setTheme] = useState('')
-  /* const [heroContent, setHeroContent] = useState(profile)
+  getThemeFromLocalStorage()
+
+  const showNavMenu = () => {
+    setNavMenu(!navMenu)
+  }
+  const closeSideNavbar = () => {
+    setNavbar(!navbar)
+  }
+  const openThemeContainer = () => {
+    setThemeContianer(!themeContainer)
+  }
+  const handleTheme = (newTheme) => {
+    document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
+  return (
+    <GlobalContext.Provider
+      value={{
+        navMenu,
+        showNavMenu,
+        navbar,
+        closeSideNavbar,
+        themeContainer,
+        openThemeContainer,
+        handleTheme,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  )
+}
+export default AppContext
+
+/* const [heroContent, setHeroContent] = useState(profile)
   const [textIndex, setTextIndex] = useState(0)
   const [letterIndex, setLetterIndex] = useState(0) */
-  /* const updateProfile = () => {
+/* const updateProfile = () => {
     const increaseLetterIndex =
       (letterIndex + 1) % (heroContent[textIndex].length + 1)
 
@@ -21,19 +58,8 @@ const AppContext = ({ children }) => {
       setLetterIndex(0)
     }
   } */
-  const showNavMenu = () => {
-    setNavMenu(!navMenu)
-  }
-  const closeSideNavbar = () => {
-    setNavbar(!navbar)
-  }
-  const openThemeContainer = () => {
-    setThemeContianer(!themeContainer)
-  }
-  const handleTheme = (newTheme) => {
-    setTheme(newTheme)
-  }
-  /*  useEffect(() => {
+
+/*  useEffect(() => {
     let textAutoChange = setTimeout(() => {
       updateProfile()
     }, 200)
@@ -42,22 +68,4 @@ const AppContext = ({ children }) => {
     }
   }, [letterIndex]) */
 
-  /* const recentProfile = heroContent[textIndex].slice(0, letterIndex) */
-  return (
-    <GlobalContext.Provider
-      value={{
-        navMenu,
-        showNavMenu,
-        navbar,
-        closeSideNavbar,
-        themeContainer,
-        openThemeContainer,
-        theme,
-        handleTheme,
-      }}
-    >
-      {children}
-    </GlobalContext.Provider>
-  )
-}
-export default AppContext
+/* const recentProfile = heroContent[textIndex].slice(0, letterIndex) */

@@ -2,13 +2,10 @@ import { socials } from '../data'
 
 const Socials = () => {
   return (
-    <ul className="flex gap-x-2 text-neutral-500 lg:pb-3">
+    <ul className="flex gap-x-2 lg:pb-3">
       {socials.map(({ id, icon, href }) => {
         return (
-          <li
-            key={id}
-            className="hover:text-primary cursor-pointer text-base-content"
-          >
+          <li key={id} className="hover:text-primary cursor-pointer ">
             <a href={href} target="_blank">
               {icon}
             </a>

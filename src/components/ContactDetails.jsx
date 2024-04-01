@@ -13,13 +13,13 @@ const ContactDetails = ({ details }) => {
   } = details
   return (
     <div className="flex flex-row items-center gap-5 mb-4 ">
-      <div className="bg-primary p-3 text-white rounded-full text-xl ">
+      <div className="bg-secondary p-3 text-white rounded-full text-xl ">
         {icon}
       </div>
       <div>
         <h5 className="mb-0.5 text-neutral-500">{title}</h5>
         <div className="flex flex-row gap-1 items-center text-base-content ">
-          <a href={href} className="font-semibold hover:text-primary ">
+          <a href={href} className="font-semibold ">
             {info}
           </a>
           <a href={href1} className="font-semibold  text-xl hover:text-primary">

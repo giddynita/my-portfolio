@@ -10,11 +10,11 @@ const SideNavBar = () => {
   return (
     <>
       <nav
-        className=" hidden fixed lg:flex lg:justify-between lg:flex-col -left-1/2 bg-base-300 h-screen   items-center side-bar z-50 "
+        className=" hidden fixed top-0 lg:flex lg:justify-between lg:flex-col -left-1/2 bg-base-300 h-screen items-center side-bar z-50 "
         style={{ left: navbar && '0' }}
       >
         <AnchorLink href="#landing" className="w-full text-center ">
-          <h3 className="logo text-sky-600 font-bold tracking-wide text-2xl bg-base-100 py-3">
+          <h3 className="logo text-sky-600 font-bold tracking-wide text-2xl bg-base-200 py-3">
             De<span className="text-emerald-600">Coda</span>
           </h3>
         </AnchorLink>

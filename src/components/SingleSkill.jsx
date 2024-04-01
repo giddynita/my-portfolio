@@ -5,7 +5,7 @@ const SingleSkill = ({ type, progress, level }) => {
         {type} <span className="text-base-content">{level}</span>
       </div>
       <progress
-        className="progress progress-primary w-full bg-base-300/75"
+        className="progress progress-secondary w-full bg-base-300/75"
         value={progress}
         max="100"
       />

@@ -5,6 +5,12 @@ import { GlobalContext } from '../assets/globalContext'
 const Theme = () => {
   const { themeContainer, openThemeContainer, handleTheme } =
     useContext(GlobalContext)
+  const themes = [
+    { color: 'bg-emerald-500', theme: 'emerald' },
+    { color: 'bg-red-300', theme: 'retro' },
+    { color: 'bg-fuchsia-400', theme: 'synthwave' },
+    { color: 'bg-pink-400', theme: 'dracula' },
+  ]
 
   return (
     <div
@@ -14,64 +20,22 @@ const Theme = () => {
       }}
     >
       <div className="relative bg-gray-200 p-3">
-        <h6 className="text-xs text-black/80 border-b pb-3 ">Color Switcher</h6>
+        <h6 className="text-xs text-black/80 border-b pb-3">Color Switcher</h6>
         <div className="grid grid-cols-4 place-items-center w-3/4 gap-y-1.5 my-3">
-          <button
-            type="button"
-            className="w-4 h-4 bg-emerald-500 rounded-full"
-            onClick={() => {
-              handleTheme('emerald')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-red-300 rounded-full"
-            onClick={() => {
-              handleTheme('retro')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-blue-400 rounded-full"
-            onClick={() => {
-              handleTheme('cmyk')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-purple-300 rounded-full"
-            onClick={() => {
-              handleTheme('pastel')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-fuchsia-400 rounded-full"
-            onClick={() => {
-              handleTheme('synthwave')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-pink-400 rounded-full"
-            onClick={() => {
-              handleTheme('dracula')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-amber-500 rounded-full"
-            onClick={() => {
-              handleTheme('coffee')
-            }}
-          />
-          <button
-            type="button"
-            className="w-4 h-4 bg-cyan-700 rounded-full"
-            onClick={() => {
-              handleTheme('business')
-            }}
-          />
+          {themes.map((themeColors) => {
+            const { color, theme } = themeColors
+
+            return (
+              <button
+                key={theme}
+                type="button"
+                className={`w-4 h-4 ${color} rounded-full`}
+                onClick={() => {
+                  handleTheme(theme)
+                }}
+              />
+            )
+          })}
         </div>
         <button
           className="text-xs bg-primary text-white w-full pb-1 py-0.5 p-3 hover:text-primary-content"

@@ -1,10 +1,25 @@
 import Heading from './Heading'
-import { reviewsSection } from '../data'
 import Slider from 'react-slick'
 import SingleReview from './SingleReview'
+import { useLoaderData } from 'react-router-dom'
 
-const Reviews = ({ reviews }) => {
-  const { sectionTitle, sectionSubtitle } = reviewsSection
+const Reviews = () => {
+  const { response } = useLoaderData()
+  const contentItems = response.items.map((content) => {
+    const { about, name, rating, image, review } = content.fields
+    const id = content.sys.id
+    const img = image?.fields?.file?.url
+    return {
+      id,
+      about,
+      name,
+      rating,
+      review,
+      img,
+    }
+  })
+  const reviews = contentItems.filter((items) => items.about !== undefined)
+
   let settings = {
     dots: true,
     infinite: true,
@@ -12,7 +27,7 @@ const Reviews = ({ reviews }) => {
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     cssEase: 'linear',
     pauseOnFocus: true,
     centerMode: true,
@@ -64,12 +79,9 @@ const Reviews = ({ reviews }) => {
     ],
   }
   return (
-    <section
-      id="reviews"
-      className="pt-14 pb-14 section m-auto bg-base-200/70 "
-    >
-      <Heading sectionTitle={sectionTitle} sectionSubtitle={sectionSubtitle} />
-      <Slider {...settings} className="">
+    <section id="reviews" className="pt-14 pb-14 section m-auto bg-base-200 ">
+      <Heading sectionTitle="reviews" sectionSubtitle="Clients Feedback" />
+      <Slider {...settings}>
         {reviews.map((review) => {
           return <SingleReview key={review.id} {...review} />
         })}
