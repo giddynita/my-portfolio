@@ -44,7 +44,7 @@ export const hero = {
 export const aboutSection = {
   profile: {
     iam: "I'm",
-    name: 'gideon onita,',
+    name: 'Gideon onita,',
     profession: 'a Front-end Developer.',
   },
   img: picture,

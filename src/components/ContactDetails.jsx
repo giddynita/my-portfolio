@@ -11,6 +11,8 @@ const ContactDetails = ({ details }) => {
     social2,
     social3,
   } = details
+  console.log(details)
+
   return (
     <div className="flex flex-row items-center gap-5 mb-4 ">
       <div className="bg-secondary p-3 text-white rounded-full text-xl ">

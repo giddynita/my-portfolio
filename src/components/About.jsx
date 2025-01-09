@@ -13,18 +13,18 @@ const About = () => {
         <div className="md:w-1/2">
           <p className="text-xl sm:text-2xl font-semibold text-center mb-5 w-3/4 mx-auto md:w-full md:text-lg">
             {profile.iam}
-            <span className="text-primary capitalize">{profile.name}</span>
-            {profile.profession}
+            <span className="text-primary capitalize"> {profile.name}</span>
+            <span> {profile.profession}</span>
           </p>
           <p className="text-lg leading-relaxed">{about}</p>
-          <a href="/" download>
+          {/* <a href="/" download>
             <button
               className="bg-primary px-6 py-3 rounded-full text-white mt-5 hover:text-primary-content text-lg cursor-not-allowed "
               disabled
             >
               Download CV
             </button>
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

@@ -13,10 +13,10 @@ const Contact = () => {
       <div className="flex flex-col gap-10 md:flex-row">
         <div className="md:w-1/2">
           {contactInfo.map((details) => {
-            return <ContactDetails key={details.id} {...details} />
+            return <ContactDetails key={details.id} details={details} />
           })}
         </div>
-        <Form className="md:w-1/2" method="POST">
+        {/* <Form className="md:w-1/2" method="POST">
           <div className="flex flex-col gap-5 lg:flex-row ">
             <FormInput type="text" name="name" id="name" placeholder="Name" />
             <FormInput
@@ -42,7 +42,7 @@ const Contact = () => {
           >
             {isSubmitting ? 'SENDING...' : ' SEND MESSAGE'}
           </button>
-        </Form>
+        </Form> */}
       </div>
     </section>
   )
