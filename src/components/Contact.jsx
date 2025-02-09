@@ -43,6 +43,7 @@ const Contact = () => {
             rows="5"
             required
           />
+          <div data-netlify-recaptcha="true"></div>
           <button
             type="submit"
             className="w-full hover:bg-primary hover:text-white  border border-primary p-3 text-primary rounded-full cursor-pointer"
