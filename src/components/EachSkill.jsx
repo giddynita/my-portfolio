@@ -1,6 +1,4 @@
-import html from '../assets/images/figma.png'
-
-const SingleSkill = ({ logo, title, level }) => {
+const EachSkill = ({ logo, title, level }) => {
   return (
     <li className="">
       {/* <div className="flex justify-between text-lg">
@@ -27,4 +25,4 @@ const SingleSkill = ({ logo, title, level }) => {
     </li>
   )
 }
-export default SingleSkill
+export default EachSkill

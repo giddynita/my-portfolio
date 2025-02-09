@@ -1,6 +1,6 @@
 import { skills } from '../data'
 import Heading from './Heading'
-import SingleSkill from './SIngleSkill'
+import EachSkill from './EachSkill'
 
 const Skills = () => {
   return (
@@ -8,7 +8,7 @@ const Skills = () => {
       <Heading sectionTitle="my skills" sectionSubtitle="My Expertise" />
       <ul className="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-x-12 place-items-center skill-grid">
         {skills.map((skill) => {
-          return <SingleSkill key={skill.id} {...skill} />
+          return <EachSkill key={skill.id} {...skill} />
         })}
       </ul>
     </section>
