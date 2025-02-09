@@ -59,12 +59,6 @@ const Reviews = ({ response }) => {
         },
       },
       {
-        breakpoint: 320,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      /*  {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
@@ -75,7 +69,13 @@ const Reviews = ({ response }) => {
         settings: {
           slidesToShow: 1,
         },
-      }, */
+      },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
     ],
   }
   return (
