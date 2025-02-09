@@ -2,11 +2,11 @@ import { createContext, useState } from 'react'
 
 export const GlobalContext = createContext()
 
-const getThemeFromLocalStorage = () => {
+/* const getThemeFromLocalStorage = () => {
   const theme = localStorage.getItem('theme' || 'light')
   document.documentElement.setAttribute('data-theme', theme)
   return theme
-}
+} */
 const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)

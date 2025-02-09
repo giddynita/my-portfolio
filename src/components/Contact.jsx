@@ -16,9 +16,10 @@ const Contact = () => {
             return <ContactDetails key={details.id} details={details} />
           })}
         </div>
-        <Form
-          className="md:w-1/2 bg-base-200 rounded-md px-6 pt-6 pb-9"
+        <form
+          name="portfolio-contact"
           method="POST"
+          className="md:w-1/2 bg-base-200 rounded-md px-6 pt-6 pb-9"
         >
           <h3 className="text-center mb-6  text-2xl font-bold text-primary tracking-wider">
             Let's work together!
@@ -44,11 +45,15 @@ const Contact = () => {
           <button
             type="submit"
             className="w-full hover:bg-primary hover:text-white  border border-primary p-3 text-primary rounded-full cursor-pointer"
-            disabled
           >
             {isSubmitting ? 'SENDING...' : ' SEND MESSAGE'}
           </button>
-        </Form>
+        </form>
+        <form name="portfolio-contact" netlify hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <textarea name="message" id=""></textarea>
+        </form>
       </div>
     </section>
   )
