@@ -24,6 +24,7 @@ const Reviews = ({ response }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    mobileFirst: true,
     speed: 2000,
     autoplaySpeed: 5000,
     cssEase: 'linear',
@@ -33,12 +34,37 @@ const Reviews = ({ response }) => {
     centerPadding: '0px',
     responsive: [
       {
+        breakpoint: 2564,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1284,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
         breakpoint: 320,
         settings: {
           slidesToShow: 1,
         },
       },
-      {
+      /*  {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
@@ -49,25 +75,7 @@ const Reviews = ({ response }) => {
         settings: {
           slidesToShow: 1,
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1284,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
+      }, */
     ],
   }
   return (
