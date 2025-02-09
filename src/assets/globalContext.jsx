@@ -3,26 +3,27 @@ import { createContext, useState } from 'react'
 export const GlobalContext = createContext()
 
 const getThemeFromLocalStorage = () => {
-  const theme = localStorage.getItem('theme' || '')
+  const theme = localStorage.getItem('theme' || 'light')
   document.documentElement.setAttribute('data-theme', theme)
+  return theme
 }
 const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
-  const [themeContainer, setThemeContianer] = useState(false)
-  getThemeFromLocalStorage()
-
+  const [theme, setTheme] = useState(getThemeFromLocalStorage())
+  const [pageLoading, setPageLoading] = useState(true)
+  const pageLoaded = (loadingStatus) => {
+    setPageLoading(loadingStatus)
+  }
   const showNavMenu = () => {
     setNavMenu(!navMenu)
   }
   const closeSideNavbar = () => {
     setNavbar(!navbar)
   }
-  const openThemeContainer = () => {
-    setThemeContianer(!themeContainer)
-  }
   const handleTheme = (newTheme) => {
     document.documentElement.setAttribute('data-theme', newTheme)
+    setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
   }
   return (
@@ -32,9 +33,10 @@ const AppContext = ({ children }) => {
         showNavMenu,
         navbar,
         closeSideNavbar,
-        themeContainer,
-        openThemeContainer,
         handleTheme,
+        theme,
+        pageLoading,
+        pageLoaded,
       }}
     >
       {children}

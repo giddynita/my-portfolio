@@ -8,7 +8,7 @@ const Contact = () => {
   const navigation = useNavigation()
   const isSubmitting = navigation.state === 'submitting'
   return (
-    <section id="contact" className="pt-14 pb-14 section m-auto bg-base-100">
+    <section id="contact" className="py-12 section m-auto bg-base-100">
       <Heading sectionTitle="contact" sectionSubtitle="Get in Touch" />
       <div className="flex flex-col gap-10 md:flex-row">
         <div className="md:w-1/2">
@@ -16,7 +16,13 @@ const Contact = () => {
             return <ContactDetails key={details.id} details={details} />
           })}
         </div>
-        {/* <Form className="md:w-1/2" method="POST">
+        <Form
+          className="md:w-1/2 bg-base-200 rounded-md px-6 pt-6 pb-9"
+          method="POST"
+        >
+          <h3 className="text-center mb-6  text-2xl font-bold text-primary tracking-wider">
+            Let's work together!
+          </h3>
           <div className="flex flex-col gap-5 lg:flex-row ">
             <FormInput type="text" name="name" id="name" placeholder="Name" />
             <FormInput
@@ -27,7 +33,7 @@ const Contact = () => {
             />
           </div>
           <textarea
-            className="block w-full p-3 my-5 border border-base-300 focus:border-primary focus:outline-none  "
+            className="block w-full p-3 my-5 bg-base-300 border border-base-300 focus:border-primary focus:outline-none  "
             placeholder="Message"
             name="message"
             id="message"
@@ -37,12 +43,12 @@ const Contact = () => {
           />
           <button
             type="submit"
-            className="w-full bg-primary p-3 text-white cursor-not-allowed hover:text-primary-content"
+            className="w-full hover:bg-primary hover:text-white  border border-primary p-3 text-primary rounded-full cursor-pointer"
             disabled
           >
             {isSubmitting ? 'SENDING...' : ' SEND MESSAGE'}
           </button>
-        </Form> */}
+        </Form>
       </div>
     </section>
   )

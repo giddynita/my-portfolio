@@ -7,10 +7,21 @@ import { DiGithubBadge } from 'react-icons/di'
 import { RiTwitterXFill } from 'react-icons/ri'
 import { TiSocialLinkedin } from 'react-icons/ti'
 import { IoShareSocial } from 'react-icons/io5'
+import css from './assets/images/css.png'
+import figma from './assets/images/figma.png'
+import git from './assets/images/git.png'
+import html from './assets/images/html.png'
+import javascript from './assets/images/javascript.png'
+import react from './assets/images/react.png'
+import tailwind from './assets/images/tailwind.png'
+import nextjs from './assets/images/nextjs.png'
+import redux from './assets/images/redux.png'
+import typescript from './assets/images/typescript.png'
+import react_query from './assets/images/react_query.png'
 
 export const navlinks = [
-  { id: nanoid(), section: 'home', href: '#landing' },
-  { id: nanoid(), section: 'about me', href: '#about' },
+  /* { id: nanoid(), section: 'home', href: '#landing' }, */
+  { id: nanoid(), section: 'about', href: '#about' },
   { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
   { id: nanoid(), section: 'reviews', href: '#reviews' },
@@ -36,53 +47,52 @@ export const socials = [
 ]
 export const hero = {
   h1: 'Welcome',
-  name: "I'm Gideon Onita",
-  profession: "I'm a Front-end Developer",
+  name: 'I am Gideon Onita',
+  profession: 'I am a Front-end Developer',
   location: 'based in Lagos, Nigeria.',
   aboutBtn: 'Contact Me',
 }
 export const aboutSection = {
   profile: {
-    iam: "I'm",
+    iam: 'I am',
     name: 'Gideon onita,',
     profession: 'a Front-end Developer.',
   },
   img: picture,
   title: 'Gideon Onita',
   about:
-    "Web development is my passion, and I am commited to creating user-friendly, accessible, and responsive web experience. As a React Js expert, I aim to continuing satisfying clients with exceptional results as I'm constantly pushing the boundaries of what's possible with this framework.",
+    "Turning pixels into interactive and dynamic experiences is what I love. I'm all about building websites that are not just functional but also delightful to use.",
+  about2:
+    "Fundamentally, I'm committed to clean code, intuitive design, and endless possibilities of the web. Whether it's crafting a sleek user interface, optimizing for performance, or ensuring cross-browser compatibility, I take pride in every detail. At core of my work, collaboration is key - I enjoy working closely with designers, backend developers, and stakeholders to bring ideas to life.",
+  about3:
+    "Beyond coding, I'm also a fashion enthusiast, deeply inspired by the creativity and self-expression it embodies.This interest fuels my appreciation for aesthethics, attention to detail, and innovative thinking - qualities I bring to every project I work on.",
+  about4:
+    "Are you a client with a vision or a developer looking to collaborate? Let's connect. I'd love to hear from you.",
 }
 export const skills = [
-  { id: nanoid(), type: 'HTML5/CSS3', progress: '98', level: 'Advanced' },
-  { id: nanoid(), type: 'Tailwind CSS', progress: '90', level: 'Advanced' },
+  { id: nanoid(), logo: html, title: 'HTML5', level: 'Advanced' },
+  { id: nanoid(), logo: css, title: 'CSS', level: 'Advanced' },
+  { id: nanoid(), logo: tailwind, title: 'Tailwind CSS', level: 'Advanced' },
   {
     id: nanoid(),
-    type: 'JavaScript ES6+',
-    progress: '85',
+    logo: javascript,
+    title: 'JavaScript ES6+',
     level: 'Proficient',
   },
-  { id: nanoid(), type: 'React JS', progress: '95', level: 'Advanced' },
-  {
-    id: nanoid(),
-    type: 'Responsive Design',
-    progress: '100',
-    level: 'Advanced',
-  },
-  { id: nanoid(), type: 'Git', progress: '80', level: 'Proficient' },
-  { id: nanoid(), type: 'Figma', progress: '90', level: 'Advanced' },
-  {
-    id: nanoid(),
-    type: 'Accessibility',
-    progress: '70',
-    level: 'Proficient',
-  },
+  { id: nanoid(), logo: typescript, title: 'Typescript', level: 'Proficient' },
+  { id: nanoid(), logo: react, title: 'React', level: 'Advanced' },
+  { id: nanoid(), logo: redux, title: 'Redux Toolkit', level: 'Advanced' },
+  { id: nanoid(), logo: react_query, title: 'React Query', level: 'Advanced' },
+  { id: nanoid(), logo: nextjs, title: 'Next JS', level: 'Proficient' },
+  { id: nanoid(), logo: git, title: 'Git', level: 'Proficient' },
+  { id: nanoid(), logo: figma, title: 'Figma', level: 'Advanced' },
 ]
 
 export const contactInfo = [
   {
     id: nanoid(),
     title: 'Address:',
-    info: 'Plot 132, Ayodele Odubiyi Street, Lekki Phase 1, Lekki, Lagos',
+    info: 'Plot 132, Ayodele Odubiyi Street, Lekki Phase 1, Lekki, Lagos.',
     icon: <MdLocationOn />,
     href: '',
   },
@@ -114,7 +124,7 @@ export const contactInfo = [
   },
   {
     id: nanoid(),
-    title: 'Social:',
+    title: 'Socials:',
     icon: <IoShareSocial />,
     info: '',
     href: '',

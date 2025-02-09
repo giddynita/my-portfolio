@@ -6,7 +6,10 @@ import { LiaTimesSolid } from 'react-icons/lia'
 const ToggleBtn = () => {
   const { navMenu, showNavMenu } = useContext(GlobalContext)
   return (
-    <button className="text-2xl md:hidden" onClick={showNavMenu}>
+    <button
+      className="text-2xl md:hidden bg-primary rounded p-1 text-base-100 hover:scale-[1.05] hover:outline-base-content"
+      onClick={showNavMenu}
+    >
       {navMenu ? <LiaTimesSolid /> : <IoMenuOutline />}
     </button>
   )

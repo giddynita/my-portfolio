@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { GlobalContext } from '../assets/globalContext'
 import { createClient } from 'contentful'
 import {
@@ -6,10 +6,13 @@ import {
   Contact,
   Footer,
   Hero,
+  Loading,
   Portfolio,
   Reviews,
   Skills,
 } from '../components'
+
+import { useQuery } from '@tanstack/react-query'
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -18,29 +21,38 @@ const client = createClient({
 })
 const queryData = {
   queryKey: ['portfolio'],
-  queryFn: () => client.getEntries({ content_type: 'portfolio' }),
+  queryFn: async () => {
+    const data = await client.getEntries({ content_type: 'portfolio' })
+    return data
+  },
 }
 
 export const loader = (queryClient) => async () => {
-  const response = await queryClient.ensureQueryData(queryData)
-  return { response }
+  await queryClient.ensureQueryData(queryData)
+  return null
 }
 const Landing = () => {
-  const { navbar } = useContext(GlobalContext)
+  const { navbar, pageLoading, pageLoaded } = useContext(GlobalContext)
+  const { data: response, isLoading } = useQuery(queryData)
+  useEffect(() => {
+    pageLoaded(isLoading)
+  }, [])
+
+  if (pageLoading) {
+    return <Loading />
+  }
   return (
     <div
       id="landing"
-      className="landing"
-      style={{
-        width: navbar ? '80%' : '100%',
-        marginLeft: navbar ? '20%' : '0',
-      }}
+      className={`${navbar ? 'lg:w-[80%]' : 'lg:w-[100%]'} ${
+        navbar ? 'lg:ml-[20%]' : 'lg:ml-0'
+      } landing`}
     >
       <Hero />
       <About />
       <Skills />
-      <Portfolio />
-      <Reviews />
+      <Portfolio response={response} />
+      <Reviews response={response} />
       <Contact />
       <Footer />
     </div>

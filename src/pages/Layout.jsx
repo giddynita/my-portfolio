@@ -3,9 +3,11 @@ import { Navbar, SideNavBar, Theme, Loading } from '../components'
 
 const Layout = () => {
   const navigation = useNavigation()
+  console.log(navigation.state)
   const isPageLoading = navigation.state === 'loading'
+
   return (
-    <div>
+    <div className="scrollable min-h-screen w-full">
       <Navbar />
       <SideNavBar />
       <Theme />

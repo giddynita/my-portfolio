@@ -6,16 +6,6 @@ export default {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: [
-      'emerald',
-      'dark',
-      'retro',
-      'cmyk',
-      'pastel',
-      'synthwave',
-      'dracula',
-      'coffee',
-      'business',
-    ],
+    themes: ['light', 'dark'],
   },
 }

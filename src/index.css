@@ -4,15 +4,38 @@
 @tailwind utilities;
 
 :root {
-  --carouselColor: #22c55e;
+  --carouselColor: #3b82f6;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --carouselColor: #3b82f6;
-  }
+
+/* =================
+THEME
+====================
+*/
+.theme {
+  transition: all 0.3s;
+}
+.theme:hover {
+  transform: translateX(0%) translateY(-50%);
+  transition: all 0.5s;
+}
+.theme {
+  transform: translateX(50%) translateY(-50%);
 }
 /* =================
-NAVBAR
+LANDING PAGE
+====================
+*/
+.landing {
+  font-family: 'Nunito', sans-serif;
+}
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.section {
+  padding-inline: 7%;
+}
+/* =================
+LANDING PAGE- NAVBAR
 ====================
 */
 .navbar {
@@ -35,56 +58,55 @@ NAVBAR
   top: 100%;
   width: 0%;
   height: 0.15rem;
-  transition: all 0.2s;
   border-radius: 4rem;
+  transition: all 0.2s;
 }
+
 .nav-link:hover::after {
   width: 100%;
 }
 .side-bar {
   width: 20%;
 }
-/* =================
-THEME
-====================
-*/
-.theme {
-  transition: all 0.3s;
-}
-/* =================
-LANDING PAGE
-====================
-*/
-.landing {
-  font-family: 'Nunito', sans-serif;
-}
-.heading {
-  font-family: 'Josefin Sans', sans-serif;
-}
-.section {
-  padding-inline: 7%;
-}
 
-@media screen and (max-width: 1024px) {
-  .landing {
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
-}
 /* =================
 LANDING PAGE- HERO
 ====================
 */
-.animate {
-  animation: bounce 2s ease-in-out infinite;
+.move-down {
+  animation: bounce-down 2s ease-in-out infinite;
 }
 
-@keyframes bounce {
+@keyframes bounce-down {
   0% {
-    transform: translateY(0);
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(12px);
+    transform: translateY(-15px);
+  }
+}
+/* =================
+LANDING PAGE- SKILLS
+====================
+*/
+.skill-card:hover .logo {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+.skill-card:hover .card-level {
+  filter: grayscale(0);
+}
+@media screen and (min-width: 425px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 640px) {
+  .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -92,11 +114,19 @@ LANDING PAGE- HERO
 LANDING PAGE- PORTFOLIO
 ====================
 */
-
-:is(.project:hover) .upper-layer,
-:is(.project:hover) .lower-layer {
-  opacity: 1;
+.project-link::after {
+  content: '';
+  left: 0;
   transition: all 0.3s;
+}
+.project-card:hover .project-img {
+  transform: scale(1.01);
+}
+.project-card:hover .project-link::after {
+  width: 100%;
+}
+.project-card:hover .project-link {
+  color: white;
 }
 
 /* =================
@@ -104,7 +134,7 @@ LANDING PAGE- REVIEWS
 ====================
 */
 .slick-dots {
-  top: 102% !important;
+  top: 115% !important;
 }
 .slick-dots li button:before {
   color: var(--carouselColor) !important;
@@ -135,7 +165,10 @@ LANDING PAGE- FOOTER
   0% {
     transform: translateY(0);
   }
-  100% {
+  50% {
     transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

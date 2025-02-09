@@ -1,32 +1,23 @@
-import { TiStarFullOutline } from 'react-icons/ti'
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa6'
 
 const SingleReview = ({ about, img, name, review }) => {
   return (
-    <article className="bg-base-300 rounded-md text-base-content relative p-8 pt-10 carousel-single w-4/5  ">
+    <article className="bg-base-300 rounded-md text-base-content relative px-8 pb-6 pt-10 carousel-single w-4/5  ">
       <figure className="flex gap-3 items-center">
         <img src={img} alt={name} className="rounded-full  h-12 w-12" />
         <figcaption>
-          <h4 className=" text-xs pb-0.5">{name}</h4>
-          <p className="text-xs text-base-cocntent/50">{about}</p>
+          <h4 className=" text-xs font-bold tracking-wider pb-0.5">{name}</h4>
+          <p className="text-xs text-base-content/70">{about}</p>
         </figcaption>
       </figure>
-      <p className="py-4 text-xs">{review}</p>
-      <div className="flex text-yellow-500">
-        <span>
-          <TiStarFullOutline />
-        </span>
-        <span>
-          <TiStarFullOutline />
-        </span>
-        <span>
-          <TiStarFullOutline />
-        </span>
-        <span>
-          <TiStarFullOutline />
-        </span>
-        <span>
-          <TiStarFullOutline />
-        </span>
+      <div className="my-4">
+        <div className="text-2xl w-max -mb-4 text-primary">
+          <FaQuoteLeft />
+        </div>
+        <p className="px-7 text-xs">{review}</p>
+        <div className="text-2xl  w-max ml-auto -mt-4 text-primary">
+          <FaQuoteRight />
+        </div>
       </div>
     </article>
   )
