@@ -10,7 +10,7 @@ const getThemeFromLocalStorage = () => {
 const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
-  const [theme, setTheme] = useState(getThemeFromLocalStorage())
+  const [theme, setTheme] = useState('light')
   const [pageLoading, setPageLoading] = useState(true)
   const pageLoaded = (loadingStatus) => {
     setPageLoading(loadingStatus)
