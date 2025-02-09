@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import { FaGithub, FaXTwitter } from 'react-icons/fa6'
 import { FaLinkedinIn } from 'react-icons/fa'
-import picture from './assets/images/image.jpg'
+import picture from './assets/images/picture.png'
 import { MdEmail, MdLocalPhone, MdLocationOn } from 'react-icons/md'
 import { DiGithubBadge } from 'react-icons/di'
 import { RiTwitterXFill } from 'react-icons/ri'
