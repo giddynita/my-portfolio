@@ -32,7 +32,8 @@ export const loader = (queryClient) => async () => {
   return null
 }
 const Landing = () => {
-  const { navbar, pageLoading, pageLoaded } = useContext(GlobalContext)
+  const { navbar, pageLoading, pageLoaded, setNavMenu } =
+    useContext(GlobalContext)
   const { data: response, isLoading } = useQuery(queryData)
   useEffect(() => {
     pageLoaded(isLoading)
@@ -47,6 +48,7 @@ const Landing = () => {
       className={`${navbar ? 'lg:w-[80%]' : 'lg:w-[100%]'} ${
         navbar ? 'lg:ml-[20%]' : 'lg:ml-0'
       } landing`}
+      onClick={() => setNavMenu(false)}
     >
       <Hero />
       <About />

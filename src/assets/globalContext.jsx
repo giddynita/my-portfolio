@@ -37,6 +37,7 @@ const AppContext = ({ children }) => {
         theme,
         pageLoading,
         pageLoaded,
+        setNavMenu,
       }}
     >
       {children}

@@ -1,20 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Menu from './Menu'
 import Navlinks from './Navlinks'
 import Socials from './Socials'
 import ToggleBtn from './ToggleBtn'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { GlobalContext } from '../assets/globalContext'
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const { setNavMenu } = useContext(GlobalContext)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       const isMobile = window.innerWidth < 1024
       if (isMobile) {
         if (currentScrollY > 200 && currentScrollY > lastScrollY) {
-          setShowNavbar(false)
+          setShowNavbar(false), setNavMenu(false)
         } else {
           setShowNavbar(true)
         }
