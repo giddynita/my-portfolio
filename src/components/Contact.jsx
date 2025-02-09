@@ -18,9 +18,15 @@ const Contact = () => {
         </div>
         <form
           name="portfolio-contact"
-          method="POST"
+          method="post"
           className="md:w-1/2 bg-base-200 rounded-md px-6 pt-6 pb-9"
         >
+          <input type="hidden" name="form-name" value="portfolio-contact" />
+          <p className="hidden">
+            <label>
+              Do not fill this out if you are human: <input name="bot-field" />
+            </label>
+          </p>
           <h3 className="text-center mb-6  text-2xl font-bold text-primary tracking-wider">
             Let's work together!
           </h3>
@@ -42,6 +48,7 @@ const Contact = () => {
             rows="5"
             required
           />
+          <div data-netlify-recaptcha="true"></div>
           <button
             type="submit"
             className="w-full hover:bg-primary hover:text-white  border border-primary p-3 text-primary rounded-full cursor-pointer"
@@ -49,7 +56,13 @@ const Contact = () => {
             {isSubmitting ? 'SENDING...' : ' SEND MESSAGE'}
           </button>
         </form>
-        <form name="portfolio-contact" netlify hidden>
+        <form
+          name="portfolio-contact"
+          netlify
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
+          hidden
+        >
           <input type="text" name="name" />
           <input type="email" name="email" />
           <textarea name="message" id=""></textarea>
