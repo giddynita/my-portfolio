@@ -1,17 +1,14 @@
-import { Outlet, useNavigation } from 'react-router-dom'
-import { Navbar, SideNavBar, Theme, Loading } from '../components'
+import { Outlet } from 'react-router-dom'
+import { SideNavBar, Theme } from '../components'
 
 const Layout = () => {
-  const navigation = useNavigation()
-  console.log(navigation.state)
-  const isPageLoading = navigation.state === 'loading'
-
   return (
-    <div className="scrollable min-h-screen w-full">
-      <Navbar />
+    <div className="min-h-screen w-full">
       <SideNavBar />
       <Theme />
-      {isPageLoading ? <Loading /> : <Outlet />}
+      <div className="scrollable min-h-screen w-full">
+        <Outlet />
+      </div>
     </div>
   )
 }
