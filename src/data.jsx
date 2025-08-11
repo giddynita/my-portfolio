@@ -48,21 +48,16 @@ export const hero = {
   projectBtn: 'View My Work',
 }
 export const aboutSection = {
-  profile: {
-    iam: 'I am',
-    name: 'Gideon onita,',
-    profession: 'a Front-end Developer.',
-  },
+  name: 'Gideon Onita',
+  profession: 'React Developer',
   img: picture,
-  title: 'Gideon Onita',
-  about:
-    "Turning pixels into interactive and dynamic experiences is what I love. I'm all about building websites that are not just functional but also delightful to use.",
-  about2:
-    "Fundamentally, I'm committed to clean code, intuitive design, and endless possibilities of the web. Whether it's crafting a sleek user interface, optimizing for performance, or ensuring cross-browser compatibility, I take pride in every detail. At core of my work, collaboration is key - I enjoy working closely with designers, backend developers, and stakeholders to bring ideas to life.",
-  about3:
-    "Beyond coding, I'm also a fashion enthusiast, deeply inspired by the creativity and self-expression it embodies.This interest fuels my appreciation for aesthethics, attention to detail, and innovative thinking - qualities I bring to every project I work on.",
-  about4:
-    "Are you a client with a vision or a developer looking to collaborate? Let's connect. I'd love to hear from you.",
+  essay: [
+    'My work combines technical precision with an understanding of user needs, ensuring that every project is not only visually appealing but also functional and ready for future use.',
+    'I have developed applications that featured secure authentication, payment processing, advanced search and filtering, real-time updates, role-based access control, interactive dashboards, analytics integration, content management systems, and cross-browser compatibility. Every feature is thoughtfully integrated to work seamlessly together, enhancing both usability and business impact.',
+    'My toolkit includes React, Next.js, TypeScript, styling frameworks, UI component libraries, Redux, and tools for handling API data. I also implement CI/CD pipelines, automated testing, and performance optimization to ensure that every solution is robust, maintainable, and scalable.',
+    'Beyond technical execution, I recognize that great products result from effective collaboration. I work closely with designers, backend engineers, and project stakeholders to ensure that each solution aligns with brand goals, user needs, and market demands.',
+    "If you need a developer who can build a platform from the ground up, add advanced functionality to an existing site, or optimize a web application for speed and scalability, let's connect as I bring a strategic, detail-oriented approach to every project.",
+  ],
 }
 export const skills = [
   { id: nanoid(), logo: html, title: 'HTML5', level: 'Advanced' },

@@ -4,21 +4,17 @@ import { hero } from '../../data'
 import { lazy, Suspense } from 'react'
 import LazyLoad from 'react-lazyload'
 import { TypeAnimation } from 'react-type-animation'
-const Avatar = lazy(() => import('./Avatar'))
+const Avatar = lazy(() => import('../global/Avatar'))
+import avatar from '../../assets/images/giddynita.jpg'
 
 const Hero = () => {
   const { name, profession, intro, aboutBtn, projectBtn } = hero
   return (
-    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-2 container">
-      <Suspense
-        fallback={
-          <figure className="w-30 h-30 md:w-38 md:h-38 rounded-full flex items-center justify-center border-4 border-primary/20 mb-4">
-            <p className="text-3xl font-bold gradient-text"> G.O </p>
-          </figure>
-        }
-      >
-        <Avatar />
-      </Suspense>
+    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-10 container">
+      <div className="mb-4">
+        <Avatar img={avatar} />
+      </div>
+
       <h2 className="text-5xl md:text-7xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
@@ -39,7 +35,9 @@ const Hero = () => {
         />
       </LazyLoad>
 
-      <p className="font-medium text-center text-muted-foreground">{intro}</p>
+      <p className="font-medium text-center text-sm sm:text-base text-muted-foreground">
+        {intro}
+      </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects">
           <button
