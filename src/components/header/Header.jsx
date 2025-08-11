@@ -1,13 +1,11 @@
 import { Suspense, useContext, useEffect, useState } from 'react'
 import Navlinks from './Navlinks'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { GlobalContext } from '../../assets/globalContext'
 import Socials from '../global/Socials'
 import ToggleMenu from './ToggleMenu'
 import Menu from './Menu'
 import { navlinks } from '../../data'
 import Logo from './Logo'
-
 const Menu = lazy(() => import('./Menu'))
 
 const Header = () => {

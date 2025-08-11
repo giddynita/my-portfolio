@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { hero } from '../../data'
 import { lazy, Suspense } from 'react'
 const Avatar = lazy(() => import('./Avatar'))
+const TypeAnimation = lazy(() => import('react-type-animation'))
 
 const Hero = () => {
   const { name, profession, location, aboutBtn, projectBtn } = hero
@@ -21,20 +22,23 @@ const Hero = () => {
       <h2 className="text-5xl md:text-7xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
-      <TypeAnimation
-        sequence={[name, 100, profession, 100]}
-        wrapper="p"
-        speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
-        deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
-        style={{
-          whiteSpace: 'pre-line',
-          fontWeight: '600',
-          marginBlock: '0.4rem 0.2rem',
-          textAlign: 'center',
-          fontSize: '1.5rem',
-        }}
-        repeat={5}
-      />
+      <Suspense fallback={null}>
+        <TypeAnimation
+          sequence={[name, 100, profession, 100]}
+          wrapper="p"
+          speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
+          deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
+          style={{
+            whiteSpace: 'pre-line',
+            fontWeight: '600',
+            marginBlock: '0.4rem 0.2rem',
+            textAlign: 'center',
+            fontSize: '1.5rem',
+          }}
+          repeat={5}
+        />
+      </Suspense>
+
       <small className="font-medium">{location}</small>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects">
