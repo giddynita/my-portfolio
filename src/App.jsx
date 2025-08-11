@@ -4,7 +4,7 @@ import { lazy, Suspense } from 'react'
 import LazyLoad from 'react-lazyload'
 import Loading from './components/global/Loading'
 const Layout = lazy(() => import('./pages/Layout'))
-const Landing = lazy(() => import('./pages/Landing'))
+const Index = lazy(() => import('./pages/Index'))
 const Projects = lazy(() => import('./pages/Projects'))
 const Error = lazy(() => import('./pages/Error'))
 
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <Suspense fallback={<Loading />}>
-            <Landing />
+            <Index />
           </Suspense>
         ),
       },

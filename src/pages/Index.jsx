@@ -31,7 +31,7 @@ export const loader = (queryClient) => async () => {
   await queryClient.ensureQueryData(queryData)
   return null
 }
-const Landing = () => {
+const Index = () => {
   const { navbar, pageLoading, pageLoaded, setNavMenu } =
     useContext(GlobalContext)
   const { data: response, isLoading } = useQuery(queryData)
@@ -60,7 +60,7 @@ const Landing = () => {
     </div>
   )
 }
-export default Landing
+export default Index
 
 /* const contentItems = response.items.map((content) => {
   const {
