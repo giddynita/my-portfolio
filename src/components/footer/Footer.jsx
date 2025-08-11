@@ -1,7 +1,7 @@
 import { FaCopyright } from 'react-icons/fa6'
 import { GoArrowUp, GoMoveToTop } from 'react-icons/go'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { navlinks } from '../data'
+import { navlinks } from '../../data'
 
 const Footer = () => {
   return (

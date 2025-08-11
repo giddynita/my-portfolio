@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { useRouteError } from 'react-router-dom'
-import { GlobalContext } from '../assets/globalContext'
+import { GlobalContext } from '../../assets/globalContext'
 
 const ErrorElement = () => {
   const error = useRouteError()

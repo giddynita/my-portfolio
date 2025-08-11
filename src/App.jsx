@@ -3,7 +3,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { lazy, Suspense } from 'react'
 import LazyLoad from 'react-lazyload'
 import Loading from './components/global/Loading'
-const Layout = lazy(() => import('./pages/Layout'))
+import Layout from './components/layout/Layout'
+import { ThemeProvider } from './components/theme/theme-provider'
 const Index = lazy(() => import('./pages/Index'))
 const Projects = lazy(() => import('./pages/Projects'))
 const Error = lazy(() => import('./pages/Error'))
@@ -52,12 +53,14 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider
-        router={router}
-        future={{
-          v7_startTransition: true,
-        }}
-      />
+      <ThemeProvider defaultTheme="dark" storageKey="theme">
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      </ThemeProvider>
     </QueryClientProvider>
   )
 }

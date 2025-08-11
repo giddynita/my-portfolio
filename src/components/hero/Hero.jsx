@@ -1,7 +1,7 @@
 import { TypeAnimation } from 'react-type-animation'
 import { IoArrowDownCircleOutline } from 'react-icons/io5'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { hero } from '../data'
+import { hero } from '../../data'
 
 const Hero = () => {
   const { h1, name, profession, location, aboutBtn } = hero

@@ -1,18 +1,6 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { GlobalContext } from '../assets/globalContext'
 import { createClient } from 'contentful'
-import {
-  About,
-  Contact,
-  Footer,
-  Hero,
-  Loading,
-  Portfolio,
-  Reviews,
-  Skills,
-} from '../components'
-
-import { useQuery } from '@tanstack/react-query'
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -32,16 +20,9 @@ export const loader = (queryClient) => async () => {
   return null
 }
 const Index = () => {
-  const { navbar, pageLoading, pageLoaded, setNavMenu } =
-    useContext(GlobalContext)
-  const { data: response, isLoading } = useQuery(queryData)
-  useEffect(() => {
-    pageLoaded(isLoading)
-  }, [])
+  const { navbar, setNavMenu } = useContext(GlobalContext)
+  /* const { data: response, isLoading } = useQuery(queryData) */
 
-  if (pageLoading) {
-    return <Loading />
-  }
   return (
     <div
       id="landing"
@@ -50,13 +31,13 @@ const Index = () => {
       } landing`}
       onClick={() => setNavMenu(false)}
     >
-      <Hero />
+      {/* <Hero />
       <About />
       <Skills />
-      <Portfolio response={response} />
-      <Reviews response={response} />
+       <Portfolio response={[]} />
+      <Reviews response={[]} />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </div>
   )
 }

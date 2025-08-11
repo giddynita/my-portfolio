@@ -2,30 +2,17 @@ import { createContext, useState } from 'react'
 
 export const GlobalContext = createContext()
 
-/* const getThemeFromLocalStorage = () => {
-  const theme = localStorage.getItem('theme' || 'light')
-  document.documentElement.setAttribute('data-theme', theme)
-  return theme
-} */
 const AppContext = ({ children }) => {
   const [navMenu, setNavMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
-  const [theme, setTheme] = useState('light')
-  const [pageLoading, setPageLoading] = useState(true)
-  const pageLoaded = (loadingStatus) => {
-    setPageLoading(loadingStatus)
-  }
+
   const showNavMenu = () => {
     setNavMenu(!navMenu)
   }
   const closeSideNavbar = () => {
     setNavbar(!navbar)
   }
-  const handleTheme = (newTheme) => {
-    document.documentElement.setAttribute('data-theme', newTheme)
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -33,10 +20,6 @@ const AppContext = ({ children }) => {
         showNavMenu,
         navbar,
         closeSideNavbar,
-        handleTheme,
-        theme,
-        pageLoading,
-        pageLoaded,
         setNavMenu,
       }}
     >

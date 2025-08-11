@@ -6,51 +6,54 @@ import ToggleBtn from './ToggleBtn'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { GlobalContext } from '../../assets/globalContext'
 
-const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true)
+const Header = () => {
+  const [showHeader, setShowHeader] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const { setNavMenu } = useContext(GlobalContext)
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      const isMobile = window.innerWidth < 1024
-      if (isMobile) {
-        if (currentScrollY > 200 && currentScrollY > lastScrollY) {
-          setShowNavbar(false), setNavMenu(false)
-        } else {
-          setShowNavbar(true)
-        }
-      } else {
-        setShowNavbar(false)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY
+          const isMobile = window.innerWidth < 1024
+          if (isMobile) {
+            if (currentScrollY > 200 && currentScrollY > lastScrollY) {
+              setShowHeader(false), setNavMenu(false)
+            } else {
+              setShowHeader(true)
+            }
+          } else {
+            setShowHeader(false)
+          }
+          setLastScrollY(currentScrollY)
+          ticking = false
+        })
+        ticking = true
       }
-      setLastScrollY(currentScrollY)
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [lastScrollY])
   return (
-    <nav
+    <header
       className={` text-base-content bg-base-100 navbar justify-between lg:hidden  border-b border-base-300 fixed top-0 z-50 transition transition-300 ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
+        showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="flex gap-x-3 items-center ">
-        <AnchorLink href="#landing">
-          <h3 className="logo text-sky-600 font-bold tracking-wide text-2xl">
-            De<span className="text-emerald-600">Coda</span>
-          </h3>
-        </AnchorLink>
-      </div>
+      <h1 className="font-bold tracking-wide text-2xl">
+        <AnchorLink href="#landing">giddynita</AnchorLink>
+      </h1>
+
       <Navlinks />
       <div className="flex gap-6 ">
         <Socials />
         <ToggleBtn />
       </div>
       <Menu />
-    </nav>
+    </header>
   )
 }
-export default Navbar
+export default Header
