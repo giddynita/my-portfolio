@@ -1,16 +1,19 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { useContext } from 'react'
-import { GlobalContext } from '../assets/globalContext'
 
-const SingleNavlink = ({ section, href }) => {
-  const { showNavMenu } = useContext(GlobalContext)
+const SingleNavlink = ({ section, href, activeSection }) => {
   return (
     <AnchorLink
       href={href}
-      className="after:hidden md:after:block transition transition-300 md:after:bg-primary lg:after:hidden hover:text-white hover:bg-primary md:hover:bg-base-100 lg:hover:bg-base-content  md:hover:text-base-content/80 lg:hover:text-base-100 nav-link  p-1 md:p-0 lg:p-2 lg:w-32 lg:text-center rounded"
-      onClick={showNavMenu}
+      className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+        activeSection === section
+          ? 'text-primary'
+          : 'text-muted-foreground hover:text-foreground'
+      }`}
     >
       {section}
+      {activeSection === section && (
+        <span className="absolute -bottom-1 left-0 right-0 h-0.5 gradient-primary rounded-full" />
+      )}
     </AnchorLink>
   )
 }

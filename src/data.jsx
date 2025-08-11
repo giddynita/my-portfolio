@@ -20,7 +20,6 @@ import typescript from './assets/images/typescript.png'
 import react_query from './assets/images/react_query.png'
 
 export const navlinks = [
-  /* { id: nanoid(), section: 'home', href: '#landing' }, */
   { id: nanoid(), section: 'about', href: '#about' },
   { id: nanoid(), section: 'skills', href: '#skills' },
   { id: nanoid(), section: 'portfolio', href: '#portfolio' },
@@ -31,18 +30,13 @@ export const navlinks = [
 export const socials = [
   {
     id: nanoid(),
-    icon: <FaGithub />,
+    icon: <FaGithub className="w-6 h-6" />,
     href: 'https://www.github.com/giddynita',
   },
   {
     id: nanoid(),
-    icon: <FaXTwitter />,
-    href: 'https://www.twitter.com/giddynita',
-  },
-  {
-    id: nanoid(),
-    icon: <FaLinkedinIn />,
-    href: 'https://ng.linkedin.com/in/gideon-onita',
+    icon: <FaLinkedinIn className="w-6 h-6" />,
+    href: 'https://ng.linkedin.com/in/giddynita',
   },
 ]
 export const hero = {

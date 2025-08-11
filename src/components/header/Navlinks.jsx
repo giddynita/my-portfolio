@@ -1,11 +1,17 @@
 import { navlinks } from '../../data'
-import SingleNavlink from '../SingleNavlink'
+import SingleNavlink from './SingleNavlink'
 
-const Navlinks = () => {
+const Navlinks = ({ activeSection }) => {
   return (
-    <ul className="hidden md:flex flex-row gap-x-3 lg:gap-y-1 capitalize lg:flex-col lg:items-center">
+    <ul className="hidden md:flex flex-1 justify-center flex-row gap-x-3  capitalize">
       {navlinks.map((navlink) => {
-        return <SingleNavlink key={navlink.id} {...navlink} />
+        return (
+          <SingleNavlink
+            key={navlink.id}
+            {...navlink, activeSection}
+            
+          />
+        )
       })}
     </ul>
   )

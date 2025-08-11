@@ -3,11 +3,11 @@ import { createContext, useState } from 'react'
 export const GlobalContext = createContext()
 
 const AppContext = ({ children }) => {
-  const [navMenu, setNavMenu] = useState(false)
+  const [menu, setMenu] = useState(false)
   const [navbar, setNavbar] = useState(true)
 
-  const showNavMenu = () => {
-    setNavMenu(!navMenu)
+  const handleMenu = () => {
+    setMenu(!menu)
   }
   const closeSideNavbar = () => {
     setNavbar(!navbar)
@@ -16,11 +16,11 @@ const AppContext = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
-        navMenu,
-        showNavMenu,
+        menu,
+        handleMenu,
         navbar,
         closeSideNavbar,
-        setNavMenu,
+        setMenu,
       }}
     >
       {children}

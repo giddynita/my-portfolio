@@ -11,6 +11,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
+  --color-card-glass: var(--card-glass);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
@@ -39,18 +40,22 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-shadow-primary: var(--shadow-primary);
 }
 
 :root {
   /* Light theme colors */
   --background: hsl(0 0% 100%);
-  --foreground: 222.2 84% 4.9%;
+  --foreground: hsl(222.2 84% 4.9%);
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
-  --card-glass: 0 0% 100% / 0.8;
+  --card-glass: hsl(0 0% 100% / 0.8);
 
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
+
+  --primary: hsl(271 91% 65%);
+  --primary-foreground: hsl(0 0% 98%);
 
   --secondary: hsl(210 40% 96%);
   --secondary-foreground: hsl(222.2 84% 4.9%);
@@ -58,8 +63,26 @@
   --muted: hsl(210 40% 96%);
   --muted-foreground: hsl(215.4 16.3% 46.9%);
 
-  --border: hsl(214.3 31.8% 91.4%);
-  --input: 214.3 31.8% 91.4%;
+  --accent: hsl(197 71% 52%);
+  --accent-foreground: hsl(0 0% 98%);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(271 91% 65%),
+    hsl(197 71% 52%)
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    hsl(271 91% 65% / 0.1),
+    hsl(197 71% 52% / 0.1)
+  );
+  --gradient-card: linear-gradient(
+    135deg,
+    hsl(240 10% 8% / 0.8),
+    hsl(240 10% 12% / 0.6)
+  );
 
   /* Shadows for light mode */
   --shadow-primary: 0 10px 40px hsl(271 91% 65% / 0.2);
@@ -83,7 +106,7 @@
 
   --card: 240 10% 3.9%;
   --card-foreground: 0 0% 98%;
-  --card-glass: 240 10% 8% / 0.8;
+  --card-glass: hsl(240 10% 8% / 0.8);
 
   --popover: 240 10% 3.9%;
   --popover-foreground: 0 0% 98%;
@@ -106,8 +129,8 @@
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
 
-  --border: 240 10% 15%;
-  --input: 240 10% 15%;
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
   --ring: 271 91% 65%;
 
   --radius: 1rem;
@@ -131,7 +154,7 @@
 
   /* Shadows and glows */
   --shadow-primary: 0 10px 40px hsl(271 91% 65% / 0.3);
-  --shadow-accent: 0 10px 40px hsl(197 71% 52% / 0.3);
+  --shadow-accent: 0 40px 40px hsl(197 71% 52% / 0.3);
   --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.37);
 
   /* Animations */
@@ -181,19 +204,23 @@
 
 @layer components {
   /* Glass morphism effect */
-  /*   .glass {
-    @apply backdrop-blur-md bg-card-glass border border-white/10;
-    box-shadow: var(--shadow-glass);
-  } */
+  .glass {
+    @apply backdrop-blur-md bg-card-glass;
+  }
 
   /* Gradient text effect */
-  /* .gradient-text {
+  .gradient-text {
     background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  } */
-
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
   /* Hover glow effects */
   /* .hover-glow-primary {
     @apply transition-all duration-300;

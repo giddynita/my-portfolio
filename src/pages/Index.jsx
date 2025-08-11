@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../assets/globalContext'
 import { createClient } from 'contentful'
+import Header from '../components/header/Header'
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -25,12 +26,13 @@ const Index = () => {
 
   return (
     <div
-      id="landing"
+      id="index"
       className={`${navbar ? 'lg:w-[80%]' : 'lg:w-[100%]'} ${
         navbar ? 'lg:ml-[20%]' : 'lg:ml-0'
       } landing`}
       onClick={() => setNavMenu(false)}
     >
+      <Header />
       {/* <Hero />
       <About />
       <Skills />
