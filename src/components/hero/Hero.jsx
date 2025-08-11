@@ -1,40 +1,61 @@
 import { TypeAnimation } from 'react-type-animation'
-import { IoArrowDownCircleOutline } from 'react-icons/io5'
+import { IoArrowDown, IoArrowDownCircleOutline } from 'react-icons/io5'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { hero } from '../../data'
+import { lazy, Suspense } from 'react'
+const Avatar = lazy(() => import('./Avatar'))
 
 const Hero = () => {
-  const { h1, name, profession, location, aboutBtn } = hero
+  const { name, profession, location, aboutBtn, projectBtn } = hero
   return (
-    <section className=" relative bg-[url('./assets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center text-white gap-1 min-h-screen">
-      <h1 className="text-5xl font-bold tracking-wider">{h1}</h1>
+    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-[calc(100vh-64px)] pt-12 pb-2">
+      <Suspense
+        fallback={
+          <figure className="w-30 h-30 md:w-38 md:h-38 rounded-full flex items-center justify-center border-4 border-primary/20 mb-4">
+            <p className="text-3xl font-bold gradient-text"> G.O </p>
+          </figure>
+        }
+      >
+        <Avatar />
+      </Suspense>
+      <h2 className="text-5xl md:text-7xl font-bold tracking-wider gradient-text">
+        Welcome,
+      </h2>
       <TypeAnimation
         sequence={[name, 100, profession, 100]}
-        wrapper="h2"
-        speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
-        deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 100 }}
+        wrapper="p"
+        speed={{ type: 'keyStrokeDelayInMs', value: 80 }}
+        deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
         style={{
           whiteSpace: 'pre-line',
-          fontWeight: '400',
+          fontWeight: '600',
           marginBlock: '0.4rem 0.2rem',
           textAlign: 'center',
+          fontSize: '1.5rem',
         }}
-        repeat={Infinity}
-        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic"
+        repeat={5}
       />
-      <small>{location}</small>
-      <AnchorLink href="#contact">
-        <button
-          type=""
-          className="mt-7 border-primary border-2 rounded-full py-2 px-6  hover:bg-primary text-white"
-        >
-          {aboutBtn}
-        </button>
-      </AnchorLink>
+      <small className="font-medium">{location}</small>
+      <div className="flex flex-col gap-4 items-center my-6">
+        <AnchorLink href="#projects">
+          <button
+            type="button"
+            className="gradient-primary hover:scale-101 transition-all duration-300 hover-glow-primary text-white font-semibold px-8 py-3 text-lg cursor-pointer rounded-md"
+          >
+            {projectBtn}
+          </button>
+        </AnchorLink>
+        <AnchorLink href="#contact">
+          <button
+            type="button"
+            className="border border-primary/50 hover:border-primary hover-glow-accent hover:bg-primary/10 hover:scale-101 transition-all duration-300 px-8 py-3 text-lg font-semibold cursor-pointer rounded-md"
+          >
+            {aboutBtn}
+          </button>
+        </AnchorLink>
+      </div>
       <AnchorLink href="#about">
-        <svg className="absolute bottom-2 move-down w-6 h-6 text-primary font-semibold">
-          <IoArrowDownCircleOutline className="text-2xl" />
-        </svg>
+        <IoArrowDown className="  animate-bounce text-2xl w-6 h-6 text-accent" />
       </AnchorLink>
     </section>
   )

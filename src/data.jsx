@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import { FaGithub, FaXTwitter } from 'react-icons/fa6'
 import { FaLinkedinIn } from 'react-icons/fa'
-import picture from './assets/images/picture.png'
+import picture from './assets/images/giddynita.jpg'
 import { MdEmail, MdLocalPhone, MdLocationOn } from 'react-icons/md'
 import { DiGithubBadge } from 'react-icons/di'
 import { RiTwitterXFill } from 'react-icons/ri'
@@ -40,11 +40,11 @@ export const socials = [
   },
 ]
 export const hero = {
-  h1: 'Welcome',
-  name: 'I am Gideon Onita',
-  profession: 'I am a Front-end Developer',
+  name: "I'm Gideon Onita",
+  profession: "I'm a Frontend Developer",
   location: 'based in Lagos, Nigeria.',
-  aboutBtn: 'Contact Me',
+  aboutBtn: 'Get in Touch',
+  projectBtn: 'View My Work',
 }
 export const aboutSection = {
   profile: {

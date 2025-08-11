@@ -9,7 +9,7 @@ const Menu = () => {
 
   return (
     <div
-      className="md:hidden origin-top shadow-lg absolute top-full left-0 w-full transition-transform bg-secondary text-secondary-foreground"
+      className="md:hidden origin-top shadow-lg absolute top-full left-0 w-full transition-transform text-secondary-foreground bg-secondary"
       style={{ transform: menu ? 'scaleY(1)' : 'scaleY(0)' }}
       ref={menuRef}
     >

@@ -10,7 +10,7 @@ import { navlinks } from '../../data'
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const [activeSection, setActiveSection] = useState('about')
+  const [activeSection, setActiveSection] = useState('index')
 
   const { menu, setMenu } = useContext(GlobalContext)
   useEffect(() => {
@@ -54,12 +54,16 @@ const Header = () => {
 
   return (
     <header
-      className={`relative fixed top-0 z-50 transition-transform transition-300 ${
+      className={`relative fixed top-0 z-50 header transition-transform transition-300 ${
         !menu && 'shadow-lg'
       }  py-4 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container flex items-center gap-6 justify-between  w-full ">
-        <h1 className="font-bold tracking-wide text-xl hover:scale-105">
+        <h1
+          className={`font-bold tracking-wide text-xl hover:scale-105 ${
+            activeSection == 'index' && 'scale-105'
+          }`}
+        >
           <AnchorLink href="#index" className="gradient-text">
             giddynita
           </AnchorLink>
