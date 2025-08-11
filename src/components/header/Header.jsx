@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { Suspense, useContext, useEffect, useState } from 'react'
 import Navlinks from './Navlinks'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { GlobalContext } from '../../assets/globalContext'
@@ -6,6 +6,9 @@ import Socials from '../global/Socials'
 import ToggleMenu from './ToggleMenu'
 import Menu from './Menu'
 import { navlinks } from '../../data'
+import Logo from './Logo'
+
+const Menu = lazy(() => import('./Menu'))
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true)
@@ -59,21 +62,15 @@ const Header = () => {
       }  py-4 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container flex items-center gap-6 justify-between  w-full ">
-        <h1
-          className={`font-bold tracking-wide text-xl hover:scale-105 ${
-            activeSection == 'index' && 'scale-105'
-          }`}
-        >
-          <AnchorLink href="#index" className="gradient-text">
-            giddynita
-          </AnchorLink>
-        </h1>
+        <Logo activeSection={activeSection} />
         <Navlinks activeSection={activeSection} />
         <div className="flex gap-6 items-center ">
           <Socials />
           <ToggleMenu />
         </div>
-        <Menu />
+        <Suspense fallback={null}>
+          <Menu />
+        </Suspense>
       </div>
     </header>
   )

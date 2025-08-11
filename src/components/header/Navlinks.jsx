@@ -16,4 +16,4 @@ const Navlinks = ({ activeSection }) => {
     </ul>
   )
 }
-export default Navlinks
+export default React.memo(Navlinks)

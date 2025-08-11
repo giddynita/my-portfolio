@@ -24,7 +24,7 @@ const Hero = () => {
       <TypeAnimation
         sequence={[name, 100, profession, 100]}
         wrapper="p"
-        speed={{ type: 'keyStrokeDelayInMs', value: 80 }}
+        speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
         deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
         style={{
           whiteSpace: 'pre-line',
