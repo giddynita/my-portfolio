@@ -7,9 +7,9 @@ import { TypeAnimation } from 'react-type-animation'
 const Avatar = lazy(() => import('./Avatar'))
 
 const Hero = () => {
-  const { name, profession, location, aboutBtn, projectBtn } = hero
+  const { name, profession, intro, aboutBtn, projectBtn } = hero
   return (
-    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-2">
+    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-2 container">
       <Suspense
         fallback={
           <figure className="w-30 h-30 md:w-38 md:h-38 rounded-full flex items-center justify-center border-4 border-primary/20 mb-4">
@@ -39,7 +39,7 @@ const Hero = () => {
         />
       </LazyLoad>
 
-      <small className="font-medium">{location}</small>
+      <p className="font-medium text-center text-muted-foreground">{intro}</p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects">
           <button

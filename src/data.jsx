@@ -41,8 +41,9 @@ export const socials = [
 ]
 export const hero = {
   name: "I'm Gideon Onita",
-  profession: "I'm a Frontend Developer",
-  location: 'based in Lagos, Nigeria.',
+  profession: "I'm a React Developer",
+  intro:
+    'I specialize in building speed-optimized, accessible, and SEO-driven web applications that deliver exceptional user experiences.',
   aboutBtn: 'Get in Touch',
   projectBtn: 'View My Work',
 }
