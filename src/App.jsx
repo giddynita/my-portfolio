@@ -1,8 +1,12 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Projects from './pages/Projects'
-import Projects from './pages/Projects'
-import Projects from './pages/Projects'
+import { lazy, Suspense } from 'react'
+import LazyLoad from 'react-lazyload'
+import Loading from './components/global/Loading'
+const Layout = lazy(() => import('./pages/Layout'))
+const Landing = lazy(() => import('./pages/Landing'))
+const Projects = lazy(() => import('./pages/Projects'))
+const Error = lazy(() => import('./pages/Error'))
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,16 +19,32 @@ const queryClient = new QueryClient({
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
-    errorElement: <Error />,
+    element: (
+      <LazyLoad>
+        <Layout />
+      </LazyLoad>
+    ),
+    errorElement: (
+      <Suspense fallback={<Loading />}>
+        <Error />
+      </Suspense>
+    ),
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Landing />
+          </Suspense>
+        ),
       },
       {
         path: 'projects/:project_name',
-        element: <Projects />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Projects />
+          </Suspense>
+        ),
       },
     ],
   },
