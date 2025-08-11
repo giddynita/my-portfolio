@@ -1,4 +1,5 @@
 import { socials } from '../../data'
+import React from 'react'
 
 const Socials = () => {
   return (

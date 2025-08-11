@@ -1,6 +1,7 @@
 import { createClient } from 'contentful'
 import Header from '../components/header/Header'
 import Hero from '../components/hero/Hero'
+import About from '../components/about/About'
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -25,9 +26,10 @@ const Index = () => {
   return (
     <>
       <Header />
-      <main id="index">
+      <main id="index container">
         <Hero />
-        {/*<About />
+        <About />
+        {/*
       <Skills />
        <Portfolio response={[]} />
       <Reviews response={[]} />

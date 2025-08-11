@@ -1,9 +1,8 @@
-import { Suspense, useContext, useEffect, useState } from 'react'
+import { lazy, Suspense, useContext, useEffect, useState } from 'react'
 import Navlinks from './Navlinks'
 import { GlobalContext } from '../../assets/globalContext'
 import Socials from '../global/Socials'
 import ToggleMenu from './ToggleMenu'
-import Menu from './Menu'
 import { navlinks } from '../../data'
 import Logo from './Logo'
 const Menu = lazy(() => import('./Menu'))
@@ -55,7 +54,7 @@ const Header = () => {
 
   return (
     <header
-      className={`relative fixed top-0 z-50 header transition-transform transition-300 ${
+      className={`fixed top-0 w-full z-50 header transition-transform transition-300 ${
         !menu && 'shadow-lg'
       }  py-4 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >

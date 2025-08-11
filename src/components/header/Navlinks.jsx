@@ -1,3 +1,4 @@
+import React from 'react'
 import { navlinks } from '../../data'
 import SingleNavlink from './SingleNavlink'
 

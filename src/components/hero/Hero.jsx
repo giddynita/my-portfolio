@@ -1,15 +1,15 @@
-import { TypeAnimation } from 'react-type-animation'
-import { IoArrowDown, IoArrowDownCircleOutline } from 'react-icons/io5'
+import { IoArrowDown } from 'react-icons/io5'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { hero } from '../../data'
 import { lazy, Suspense } from 'react'
+import LazyLoad from 'react-lazyload'
+import { TypeAnimation } from 'react-type-animation'
 const Avatar = lazy(() => import('./Avatar'))
-const TypeAnimation = lazy(() => import('react-type-animation'))
 
 const Hero = () => {
   const { name, profession, location, aboutBtn, projectBtn } = hero
   return (
-    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-[calc(100vh-64px)] pt-12 pb-2">
+    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-2">
       <Suspense
         fallback={
           <figure className="w-30 h-30 md:w-38 md:h-38 rounded-full flex items-center justify-center border-4 border-primary/20 mb-4">
@@ -22,7 +22,7 @@ const Hero = () => {
       <h2 className="text-5xl md:text-7xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
-      <Suspense fallback={null}>
+      <LazyLoad>
         <TypeAnimation
           sequence={[name, 100, profession, 100]}
           wrapper="p"
@@ -37,7 +37,7 @@ const Hero = () => {
           }}
           repeat={5}
         />
-      </Suspense>
+      </LazyLoad>
 
       <small className="font-medium">{location}</small>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
