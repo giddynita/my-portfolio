@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { GlobalContext } from '../assets/globalContext'
 import { createClient } from 'contentful'
 import Header from '../components/header/Header'
 
@@ -21,7 +19,6 @@ export const loader = (queryClient) => async () => {
   return null
 }
 const Index = () => {
-  const { navbar, setMenu } = useContext(GlobalContext)
   /* const { data: response, isLoading } = useQuery(queryData) */
 
   return (

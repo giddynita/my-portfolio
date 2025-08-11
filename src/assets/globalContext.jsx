@@ -1,16 +1,12 @@
-import { createContext, useState } from 'react'
+import { createContext, useRef, useState } from 'react'
 
 export const GlobalContext = createContext()
 
 const AppContext = ({ children }) => {
   const [menu, setMenu] = useState(false)
-  const [navbar, setNavbar] = useState(true)
-
+  const menuRef = useRef(null)
   const handleMenu = () => {
     setMenu(!menu)
-  }
-  const closeSideNavbar = () => {
-    setNavbar(!navbar)
   }
 
   return (
@@ -18,9 +14,8 @@ const AppContext = ({ children }) => {
       value={{
         menu,
         handleMenu,
-        navbar,
-        closeSideNavbar,
         setMenu,
+        menuRef,
       }}
     >
       {children}
