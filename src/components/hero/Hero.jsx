@@ -36,7 +36,7 @@ const Hero = () => {
         repeat={5}
       />
       <small className="font-medium">{location}</small>
-      <div className="flex flex-col gap-4 items-center my-6">
+      <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects">
           <button
             type="button"
@@ -55,7 +55,7 @@ const Hero = () => {
         </AnchorLink>
       </div>
       <AnchorLink href="#about">
-        <IoArrowDown className="  animate-bounce text-2xl w-6 h-6 text-accent" />
+        <IoArrowDown className="absolute  bottom-2 left-1/2 -translate-x-1/2  animate-bounce text-2xl w-6 h-6 text-accent" />
       </AnchorLink>
     </section>
   )
