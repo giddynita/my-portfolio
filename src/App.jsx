@@ -1,12 +1,8 @@
-import {
-  RouterProvider,
-  createBrowserRouter,
-  useNavigation,
-} from 'react-router-dom'
-import { Layout, Error, Landing } from './pages'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ErrorElement } from './components'
-import { loader as landingLoader } from './pages/Landing'
+import Projects from './pages/Projects'
+import Projects from './pages/Projects'
+import Projects from './pages/Projects'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,8 +21,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
-        errorElement: <ErrorElement />,
-        loader: landingLoader(queryClient),
+      },
+      {
+        path: 'projects/:project_name',
+        element: <Projects />,
       },
     ],
   },
@@ -34,7 +32,12 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     </QueryClientProvider>
   )
 }
