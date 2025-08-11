@@ -1,6 +1,7 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-const SingleNavlink = ({ section, href, activeSection }) => {
+const SingleNavlink = ({ navlink, activeSection }) => {
+  const { section, href } = navlink
   return (
     <AnchorLink
       href={href}

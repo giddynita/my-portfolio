@@ -8,8 +8,8 @@ const Navlinks = ({ activeSection }) => {
         return (
           <SingleNavlink
             key={navlink.id}
-            {...navlink, activeSection}
-            
+            navlink={navlink}
+            activeSection={activeSection}
           />
         )
       })}

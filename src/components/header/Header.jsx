@@ -54,21 +54,23 @@ const Header = () => {
 
   return (
     <header
-      className={`px-[2.5%] relative flex items-center gap-6 justify-between lg:hidden  w-full fixed top-0 z-50 transition-transform transition-300 ${
+      className={`relative fixed top-0 z-50 transition-transform transition-300 ${
         !menu && 'shadow-lg'
       }  py-4 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <h1 className="font-bold tracking-wide text-xl hover:scale-105">
-        <AnchorLink href="#index" className="gradient-text">
-          giddynita
-        </AnchorLink>
-      </h1>
-      <Navlinks activeSection={activeSection} />
-      <div className="flex gap-6 items-center ">
-        <Socials />
-        <ToggleMenu />
+      <div className="container flex items-center gap-6 justify-between  w-full ">
+        <h1 className="font-bold tracking-wide text-xl hover:scale-105">
+          <AnchorLink href="#index" className="gradient-text">
+            giddynita
+          </AnchorLink>
+        </h1>
+        <Navlinks activeSection={activeSection} />
+        <div className="flex gap-6 items-center ">
+          <Socials />
+          <ToggleMenu />
+        </div>
+        <Menu />
       </div>
-      <Menu />
     </header>
   )
 }

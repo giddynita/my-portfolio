@@ -22,7 +22,7 @@ import react_query from './assets/images/react_query.png'
 export const navlinks = [
   { id: nanoid(), section: 'about', href: '#about' },
   { id: nanoid(), section: 'skills', href: '#skills' },
-  { id: nanoid(), section: 'portfolio', href: '#portfolio' },
+  { id: nanoid(), section: 'projects', href: '#projects' },
   { id: nanoid(), section: 'reviews', href: '#reviews' },
   { id: nanoid(), section: 'contact', href: '#contact' },
 ]

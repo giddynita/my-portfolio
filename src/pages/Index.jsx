@@ -21,26 +21,22 @@ export const loader = (queryClient) => async () => {
   return null
 }
 const Index = () => {
-  const { navbar, setNavMenu } = useContext(GlobalContext)
+  const { navbar, setMenu } = useContext(GlobalContext)
   /* const { data: response, isLoading } = useQuery(queryData) */
 
   return (
-    <div
-      id="index"
-      className={`${navbar ? 'lg:w-[80%]' : 'lg:w-[100%]'} ${
-        navbar ? 'lg:ml-[20%]' : 'lg:ml-0'
-      } landing`}
-      onClick={() => setNavMenu(false)}
-    >
+    <>
       <Header />
-      {/* <Hero />
+      <main id="index">
+        {/* <Hero />
       <About />
       <Skills />
        <Portfolio response={[]} />
       <Reviews response={[]} />
       <Contact />
       <Footer /> */}
-    </div>
+      </main>
+    </>
   )
 }
 export default Index
