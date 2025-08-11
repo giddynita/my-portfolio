@@ -1,5 +1,5 @@
-import { skills } from '../data'
-import Heading from './Heading'
+import { skills } from '../../data'
+import Heading from '../global/Heading'
 import EachSkill from './EachSkill'
 
 const Skills = () => {

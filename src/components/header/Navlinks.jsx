@@ -1,5 +1,5 @@
-import { navlinks } from '../data'
-import SingleNavlink from './SingleNavlink'
+import { navlinks } from '../../data'
+import SingleNavlink from '../SingleNavlink'
 
 const Navlinks = () => {
   return (

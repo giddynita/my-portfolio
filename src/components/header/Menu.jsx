@@ -1,8 +1,8 @@
-import { navlinks } from '../data'
+import { navlinks } from '../../data'
 import { useContext } from 'react'
-import { GlobalContext } from '../assets/globalContext'
+import { GlobalContext } from '../../assets/globalContext'
 
-import SingleNavlink from './SingleNavlink'
+import SingleNavlink from '../SingleNavlink'
 
 const Menu = () => {
   const { navMenu } = useContext(GlobalContext)

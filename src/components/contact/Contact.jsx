@@ -1,8 +1,8 @@
-import Heading from './Heading'
-import { contactInfo } from '../data'
+import Heading from '../global/Heading'
+import { contactInfo } from '../../data'
 import ContactDetails from './ContactDetails'
 import { Form, useNavigation } from 'react-router-dom'
-import FormInput from './FormInput'
+import FormInput from '../form/FormInput'
 
 const Contact = () => {
   const navigation = useNavigation()

@@ -1,4 +1,4 @@
-import Heading from './Heading'
+import Heading from '../global/Heading'
 import Slider from 'react-slick'
 import SingleReview from './SingleReview'
 

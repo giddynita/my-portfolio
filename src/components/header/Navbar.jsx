@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import Menu from './Menu'
 import Navlinks from './Navlinks'
-import Socials from './Socials'
+import Socials from '../Socials'
 import ToggleBtn from './ToggleBtn'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { GlobalContext } from '../assets/globalContext'
+import { GlobalContext } from '../../assets/globalContext'
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true)

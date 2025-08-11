@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { GlobalContext } from '../assets/globalContext'
+import { GlobalContext } from '../../assets/globalContext'
 import { IoMenuOutline } from 'react-icons/io5'
 import { LiaTimesSolid } from 'react-icons/lia'
 

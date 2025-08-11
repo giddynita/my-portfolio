@@ -1,4 +1,4 @@
-import Heading from './Heading'
+import Heading from '../global/Heading'
 import SingleProject from './SingleProject'
 
 const Portfolio = ({ response }) => {

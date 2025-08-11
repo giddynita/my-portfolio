@@ -1,5 +1,5 @@
-import { aboutSection } from '../data'
-import Heading from './Heading'
+import { aboutSection } from '../../data'
+import Heading from '../global/Heading'
 
 const About = () => {
   const { profile, img, title, about, about2, about3, about4 } = aboutSection
