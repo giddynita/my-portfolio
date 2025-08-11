@@ -8,7 +8,7 @@ const ThemeToggle = () => {
     <div className="fixed top-1/3 right-0 z-50">
       <button
         type="button"
-        className="rounded-l-full p-2 bg-secondary hover:bg-secondary/80 cursor-pointer "
+        className="rounded-l-full p-2 bg-accent hover:bg-accent/80 cursor-pointer "
         onClick={() => {
           return (
             (theme == 'light' && setTheme('dark')) ||
@@ -16,8 +16,8 @@ const ThemeToggle = () => {
           )
         }}
       >
-        <MdLightMode className="h-[1.2rem] w-[1.2rem] scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-100  text-secondary-foreground " />
-        <MdDarkMode className="absolute top-1/2 -translate-y-1/2 h-[1.2rem] w-[1.2rem] scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100 text-muted-foreground" />
+        <MdLightMode className="h-[1.2rem] w-[1.2rem] scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-100  text-accent-foreground " />
+        <MdDarkMode className="absolute top-1/2 -translate-y-1/2 h-[1.2rem] w-[1.2rem] scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100 text-accent-foreground" />
       </button>
     </div>
   )
