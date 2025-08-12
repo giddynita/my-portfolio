@@ -4,9 +4,9 @@ import Heading from '../global/Heading'
 const Avatar = lazy(() => import('../global/Avatar'))
 
 const About = () => {
-  const { profile, img, name, profession, essay } = aboutSection
+  const { img, name, profession, essay } = aboutSection
   return (
-    <section id="about" className="py-10 container">
+    <section id="about" className="pb-10 pt-[80px] container">
       <Heading sectionTitle="about me" />
       <div className="space-y-8">
         <div className="flex items-center gap-4">

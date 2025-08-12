@@ -10,12 +10,15 @@ import avatar from '../../assets/images/giddynita.jpg'
 const Hero = () => {
   const { name, profession, intro, aboutBtn, projectBtn } = hero
   return (
-    <section className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[80px] pb-10 container">
+    <section
+      id="index"
+      className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
+    >
       <div className="mb-4">
         <Avatar img={avatar} />
       </div>
 
-      <h2 className="text-5xl md:text-7xl font-bold tracking-wider gradient-text">
+      <h2 className="text-3xl md:text-5xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
       <LazyLoad>
@@ -35,7 +38,7 @@ const Hero = () => {
         />
       </LazyLoad>
 
-      <p className="font-medium text-center text-sm sm:text-base text-muted-foreground">
+      <p className="font-medium text-center text-sm sm:text-base text-muted-foreground max-w-xl">
         {intro}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">

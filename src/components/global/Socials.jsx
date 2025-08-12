@@ -1,10 +1,13 @@
 import { socials } from '../../data'
-import React from 'react'
+import { useMemo } from 'react'
 
 const Socials = () => {
+  const socialLinks = useMemo(() => {
+    return socials
+  }, [])
   return (
     <ul className="flex gap-x-2 lg:pb-3">
-      {socials.map(({ id, icon, href }) => {
+      {socialLinks.map(({ id, icon, href }) => {
         return (
           <li
             key={id}
@@ -19,4 +22,4 @@ const Socials = () => {
     </ul>
   )
 }
-export default React.memo(Socials)
+export default Socials

@@ -1,11 +1,19 @@
-import React from 'react'
+import { useMemo } from 'react'
 import { navlinks } from '../../data'
 import SingleNavlink from './SingleNavlink'
 
 const Navlinks = ({ activeSection }) => {
+  const filteredNavlinks = useMemo(() => {
+    return navlinks.map((item) => {
+      if (item.section == 'index') {
+        return { ...item, section: '' }
+      }
+      return item
+    })
+  }, [])
   return (
     <ul className="hidden md:flex flex-1 justify-center flex-row gap-x-3  capitalize">
-      {navlinks.map((navlink) => {
+      {filteredNavlinks.map((navlink) => {
         return (
           <SingleNavlink
             key={navlink.id}
@@ -17,4 +25,4 @@ const Navlinks = ({ activeSection }) => {
     </ul>
   )
 }
-export default React.memo(Navlinks)
+export default Navlinks

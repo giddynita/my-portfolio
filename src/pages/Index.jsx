@@ -1,7 +1,10 @@
 import { createClient } from 'contentful'
 import Header from '../components/header/Header'
 import Hero from '../components/hero/Hero'
-import About from '../components/about/About'
+import { sectionSuspense } from '../components/suspense/suspense'
+import { lazy } from 'react'
+const About = lazy(() => import('../components/about/About'))
+const Skills = lazy(() => import('../components/skills/Skills'))
 
 const client = createClient({
   space: 'dc28dkbw08sq',
@@ -28,9 +31,10 @@ const Index = () => {
       <Header />
       <main id="index container">
         <Hero />
-        <About />
+        {sectionSuspense(<About />)}
+        {sectionSuspense(<Skills />)}
         {/*
-      <Skills />
+      
        <Portfolio response={[]} />
       <Reviews response={[]} />
       <Contact />

@@ -30,8 +30,6 @@ const Header = () => {
                 currentScrollY < offsetTop + offsetHeight
               ) {
                 setActiveSection(section)
-              } else {
-                setActiveSection('index')
               }
             }
           })
