@@ -6,15 +6,15 @@ const Avatar = lazy(() => import('../global/Avatar'))
 const About = () => {
   const { img, name, profession, essay } = aboutSection
   return (
-    <section id="about" className="pb-10 pt-[80px] container">
+    <section id="about" className=" pt-[80px] container">
       <Heading sectionTitle="about me" />
       <div className="space-y-8">
         <div className="flex items-center gap-4">
           <Avatar img={img} />
           <div>
-            <p className="gradient-text text-2xl sm:text-3xl font-bold">
+            <h3 className="gradient-text text-2xl sm:text-3xl font-bold">
               {name}
-            </p>
+            </h3>
             <p className="font-medium sm:text-xl text-muted-foreground">
               {profession}
             </p>
@@ -27,12 +27,7 @@ const About = () => {
             </p>
           ))}
         </ul>
-
         <div>
-          {/* <p className="text-lg/6 my-1.5 ">{about}</p>
-          <p className="text-lg/6  my-1.5">{about2}</p>
-          <p className="text-lg/6  my-1.5">{about3}</p>
-          <p className="text-lg/6  my-1.5">{about4}</p> */}
           {/* <a href="/" download>
             <button
               className="bg-primary px-6 py-3 rounded-full text-white mt-5 hover:text-primary-content text-lg cursor-not-allowed "

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { navlinks } from '../../data'
 import SingleNavlink from './SingleNavlink'
 
-const Navlinks = ({ activeSection }) => {
+const HeaderNavlinks = ({ activeSection }) => {
   const filteredNavlinks = useMemo(() => {
     return navlinks.map((item) => {
       if (item.section == 'index') {
@@ -25,4 +25,4 @@ const Navlinks = ({ activeSection }) => {
     </ul>
   )
 }
-export default Navlinks
+export default HeaderNavlinks

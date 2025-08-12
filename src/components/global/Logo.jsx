@@ -1,13 +1,9 @@
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-function Logo({ activeSection }) {
+function Logo() {
   return (
-    <h1
-      className={`font-bold tracking-wide text-xl hover:scale-105 ${
-        activeSection == 'index' && 'scale-105'
-      }`}
-    >
+    <h1 className={`font-bold tracking-wide text-xl hover:scale-105`}>
       <AnchorLink href="#index" className="gradient-text">
         giddynita
       </AnchorLink>

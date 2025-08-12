@@ -1,11 +1,11 @@
 import { lazy, Suspense, useContext, useEffect, useState } from 'react'
-import Navlinks from './Navlinks'
 import { GlobalContext } from '../../assets/globalContext'
-import Socials from '../global/Socials'
 import ToggleMenu from './ToggleMenu'
 import { navlinks } from '../../data'
-import Logo from './Logo'
+import Logo from '../global/Logo'
 const Menu = lazy(() => import('./Menu'))
+const Navlinks = lazy(() => import('../navlinks/HeaderNavlinks'))
+const Socials = lazy(() => import('../global/Socials'))
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true)
@@ -60,9 +60,14 @@ const Header = () => {
     >
       <div className="container flex items-center gap-6 justify-between  w-full ">
         <Logo activeSection={activeSection} />
-        <Navlinks activeSection={activeSection} />
+        <Suspense fallback={<div className="flex-1 h-[36px]" />}>
+          <Navlinks activeSection={activeSection} />
+        </Suspense>
         <div className="flex gap-6 items-center ">
-          <Socials />
+          <Suspense fallback={<div className="w-[64px] h-[36px]" />}>
+            <Socials />
+          </Suspense>
+
           <ToggleMenu />
         </div>
         <Suspense fallback={null}>
