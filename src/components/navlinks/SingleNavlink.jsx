@@ -5,7 +5,7 @@ const SingleNavlink = ({ navlink, activeSection }) => {
   return (
     <AnchorLink
       href={href}
-      className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+      className={`relative px-3 py-2 text-sm sm:text-base font-medium transition-colors ${
         activeSection === section
           ? 'text-primary'
           : 'text-muted-foreground hover:text-foreground'

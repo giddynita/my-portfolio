@@ -11,8 +11,8 @@ const Contact = () => {
       <div className="space-y-10">
         <ContactForm />
         <div className="space-y-4">
-          <h3 className="font-bold text-2xl">Get in Touch</h3>
-          <p className=" text-base sm:text-lg text-muted-foreground">
+          <h3 className="font-bold text-2xl md:text-3xl">Get in Touch</h3>
+          <p className=" text-base md:text-xl text-muted-foreground">
             I'm always interested in new opportunities and exciting projects.
             Whether you're looking for a developer, have a question, or just
             want to say hi, I'll try my best to get back to you!
@@ -22,7 +22,7 @@ const Contact = () => {
             return <ContactDetails key={details.id} details={details} />
           })}
           <div className="space-y-4 mt-8">
-            <h4 className="font-bold text-xl">Follow Me</h4>
+            <h4 className="font-bold text-xl md:text-2xl">Follow Me</h4>
             <Socials />
           </div>
         </div>

@@ -7,19 +7,21 @@ const ContactDetails = ({ details }) => {
         {icon}
       </div>
       <div>
-        <h4 className="font-semibold group-hover:text-accent">{title}</h4>
+        <h4 className="font-semibold group-hover:text-accent md:text-lg">
+          {title}
+        </h4>
         {href ? (
           <a
             href={href}
             on
-            className="font-semibold text-sm text-muted-foreground hover:text-accent
+            className="font-semibold text-sm md:text-base text-muted-foreground hover:text-accent
             "
           >
             {info}
           </a>
         ) : (
           <p
-            className="font-semibold text-sm text-muted-foreground pt-0.5
+            className="font-semibold text-sm md:text-base  text-muted-foreground pt-0.5
             "
           >
             {info}

@@ -7,7 +7,7 @@ const MenuLink = ({ section, href }) => {
   return (
     <AnchorLink
       href={href}
-      className=" py-4 text-sm font-medium transition-colors border-b last:border-b-0"
+      className=" py-4 text-sm sm:text-base font-medium transition-colors border-b last:border-b-0"
       onClick={handleMenu}
     >
       {section}

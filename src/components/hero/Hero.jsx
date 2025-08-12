@@ -38,7 +38,7 @@ const Hero = () => {
         />
       </LazyLoad>
 
-      <p className="font-medium text-center text-sm sm:text-base text-muted-foreground max-w-xl">
+      <p className="font-medium text-center text-sm sm:text-lg text-muted-foreground max-w-xl">
         {intro}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
