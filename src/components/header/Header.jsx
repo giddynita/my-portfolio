@@ -35,12 +35,10 @@ const Header = () => {
               }
             }
           })
-          if (isMobile) {
-            if (currentScrollY > 150 && currentScrollY > lastScrollY) {
-              setShowHeader(false), setMenu(false)
-            } else {
-              setShowHeader(true)
-            }
+          if (currentScrollY > 150 && currentScrollY > lastScrollY) {
+            setShowHeader(false), setMenu(false)
+          } else {
+            setShowHeader(true)
           }
           setLastScrollY(currentScrollY)
           ticking = false
