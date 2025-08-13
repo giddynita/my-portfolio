@@ -16,6 +16,7 @@ const ThemeToggle = () => {
           )
         }}
       >
+        <span className="sr-only">{theme}</span>
         <MdLightMode className="h-[1.2rem] w-[1.2rem] scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-100  text-accent-foreground " />
         <MdDarkMode className="absolute top-1/2 -translate-y-1/2 h-[1.2rem] w-[1.2rem] scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100 text-accent-foreground" />
       </button>
