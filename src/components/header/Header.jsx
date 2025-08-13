@@ -18,7 +18,7 @@ const Header = () => {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const isMobile = window.innerWidth < 1024
+          const isMobile = window.innerWidth < 768
           const currentScrollY = isMobile
             ? window.scrollY + 64
             : window.scrollY + 72
