@@ -6,6 +6,8 @@ import LazyLoad from 'react-lazyload'
 import { TypeAnimation } from 'react-type-animation'
 const Avatar = lazy(() => import('../global/Avatar'))
 import avatar from '../../assets/images/giddynita.jpg'
+import GradientButton from '../global/GradientButton'
+import OutlineButton from '../global/OutlineButton'
 
 const Hero = () => {
   const { name, profession, intro, aboutBtn, projectBtn } = hero
@@ -42,21 +44,11 @@ const Hero = () => {
         {intro}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
-        <AnchorLink href="#projects">
-          <button
-            type="button"
-            className="gradient-primary hover:scale-101 transition-all duration-300 hover-glow-primary text-white font-semibold px-8 py-3 text-lg cursor-pointer rounded-md"
-          >
-            {projectBtn}
-          </button>
+        <AnchorLink href="#projects" className="w-64">
+          <GradientButton text={projectBtn} type="button" />
         </AnchorLink>
-        <AnchorLink href="#contact">
-          <button
-            type="button"
-            className="border border-primary/50 hover:border-primary hover-glow-accent hover:bg-primary/10 hover:scale-101 transition-all duration-300 px-8 py-3 text-lg font-semibold cursor-pointer rounded-md"
-          >
-            {aboutBtn}
-          </button>
+        <AnchorLink href="#contact" className="w-64">
+          <OutlineButton text={aboutBtn} type="button" />
         </AnchorLink>
       </div>
       <AnchorLink href="#about">

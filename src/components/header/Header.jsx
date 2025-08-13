@@ -19,7 +19,9 @@ const Header = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const isMobile = window.innerWidth < 1024
-          const currentScrollY = isMobile ? window.scrollY + 64 : window.scrollY
+          const currentScrollY = isMobile
+            ? window.scrollY + 64
+            : window.scrollY + 72
           navlinks.forEach(({ section }) => {
             const element = document.getElementById(section)
             if (element) {

@@ -16,7 +16,7 @@ const HeaderNavlinks = ({ activeSection }) => {
       {filteredNavlinks.map((navlink) => {
         return (
           <SingleNavlink
-            key={navlink.id}
+            key={navlink.section}
             navlink={navlink}
             activeSection={activeSection}
           />

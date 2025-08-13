@@ -19,7 +19,7 @@ const Contact = () => {
           </p>
 
           {contactInfo.map((details) => {
-            return <ContactDetails key={details.id} details={details} />
+            return <ContactDetails key={details.title} details={details} />
           })}
           <div className="space-y-4 mt-8">
             <h4 className="font-bold text-xl md:text-2xl">Follow Me</h4>

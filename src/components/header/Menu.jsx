@@ -15,7 +15,7 @@ const Menu = () => {
     >
       <ul className="flex flex-col capitalize text-center w-full">
         {navlinks.map((navlink) => {
-          return <MenuLink key={navlink.id} {...navlink} />
+          return <MenuLink key={navlink.section} {...navlink} />
         })}
       </ul>
     </div>

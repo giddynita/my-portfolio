@@ -1,4 +1,5 @@
 import FormInput from '../form/FormInput'
+import GradientButton from '../global/GradientButton'
 
 function ContactForm() {
   return (
@@ -41,12 +42,7 @@ function ContactForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        className="w-full   p-3  rounded-lg gradient-primary hover:scale-101 transition-all duration-300 hover-glow-primary text-white font-semibold px-8 py-3 text-lg  cursor-pointer"
-      >
-        SEND MESSAGE
-      </button>
+      <GradientButton text="Send Message" type="submit" />
     </form>
   )
 }

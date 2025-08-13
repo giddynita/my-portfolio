@@ -10,7 +10,12 @@ const Socials = () => {
             key={id}
             className="hover:text-primary hover:scale-103 text-muted-foreground cursor-pointer"
           >
-            <a href={href} target="_blank" className="text-2xl">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl"
+            >
               <span className="sr-only">{id}</span>
               {icon}
             </a>
