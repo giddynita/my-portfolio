@@ -6,6 +6,14 @@ import MenuLink from './MenuLink'
 
 const Menu = () => {
   const { menu, menuRef } = useContext(GlobalContext)
+  const filteredNavlinks = useMemo(() => {
+    return navlinks.map((item) => {
+      if (item.section == 'index') {
+        return { ...item, section: '' }
+      }
+      return item
+    })
+  }, [])
 
   return (
     <div
@@ -14,7 +22,7 @@ const Menu = () => {
       ref={menuRef}
     >
       <ul className="flex flex-col capitalize text-center w-full">
-        {navlinks.map((navlink) => {
+        {filteredNavlinks.map((navlink) => {
           return <MenuLink key={navlink.section} {...navlink} />
         })}
       </ul>
