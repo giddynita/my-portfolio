@@ -11,7 +11,7 @@ export const navlinks = [
 ]
 
 export const filteredNavlinks = navlinks.map((item) => {
-  if (item.section == 'index') {
+  if (item.section == 'hero') {
     return { ...item, section: '' }
   }
   return item
