@@ -14,7 +14,7 @@ const Hero = () => {
   const { data, isLoading } = useHeroContent()
 
   if (isLoading) {
-    return <SectionLoading />
+    return <SectionLoading height="min-h-screen" />
   }
 
   return (
