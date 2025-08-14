@@ -4,7 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 function Logo() {
   return (
     <h1 className={`font-bold tracking-wide text-xl hover:scale-105`}>
-      <AnchorLink href="#index" className="gradient-text">
+      <AnchorLink href="#hero" className="gradient-text">
         giddynita
       </AnchorLink>
     </h1>

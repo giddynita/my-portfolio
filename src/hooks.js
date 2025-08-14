@@ -15,8 +15,8 @@ export const useHeroContent = () => {
 }
 export const useAboutContent = () => {
   const fetchedAbout = async () => {
-    const content = await client.getEntries({ content_type: 'portfolio-about' })
-    return content
+    const content = await client.getEntries({ content_type: 'portfolioAbout' })
+    return content.items[0].fields
   }
   const queryData = useQuery({
     queryKey: ['portfolio-about'],
@@ -28,9 +28,21 @@ export const useAboutContent = () => {
 export const useSkillsContent = () => {
   const fetchedSkills = async () => {
     const content = await client.getEntries({
-      content_type: 'portfolio-skills',
+      content_type: 'portfolioSkills',
     })
-    return content
+    const skills = content.items
+      .sort((a, b) => {
+        const createdA = new Date(a.sys.createdAt)
+        const createdB = new Date(b.sys.createdAt)
+        return createdA - createdB
+      })
+      .map((item) => {
+        const fields = item.fields
+
+        return { ...fields }
+      })
+
+    return skills
   }
   const queryData = useQuery({
     queryKey: ['portfolio-skills'],
@@ -42,9 +54,14 @@ export const useSkillsContent = () => {
 export const useProjectsContent = () => {
   const fetchedProjects = async () => {
     const content = await client.getEntries({
-      content_type: 'portfolio-projects',
+      content_type: 'portfolioProjects',
     })
-    return content
+    const projects = content.items.map((item) => {
+      const fields = item.fields
+      const image = item.fields.image?.fields?.file?.url
+      return { ...fields, image }
+    })
+    return projects
   }
   const queryData = useQuery({
     queryKey: ['portfolio-projects'],

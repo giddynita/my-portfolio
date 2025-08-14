@@ -11,50 +11,48 @@ import { useHeroContent } from '../../hooks'
 import SectionLoading from '../global/SectionLoading'
 
 const Hero = () => {
-  const { data, isLoading } = useHeroContent()
-
-  if (isLoading) {
-    return <SectionLoading height="min-h-screen" />
-  }
+  const { data: hero, isLoading } = useHeroContent()
 
   return (
     <section
-      id="index"
+      id="hero"
       className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
     >
       <div className="mb-4">
-        <Avatar img={data?.image?.fields?.file?.url} />
+        <Avatar img={hero?.image?.fields?.file?.url} />
       </div>
 
       <h2 className="text-3xl md:text-5xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
-      <LazyLoad>
-        <TypeAnimation
-          sequence={[data?.name, 100, data?.profession, 100]}
-          wrapper="p"
-          speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
-          deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
-          style={{
-            whiteSpace: 'pre-line',
-            fontWeight: '600',
-            marginBlock: '0.4rem 0.2rem',
-            textAlign: 'center',
-            fontSize: '1.5rem',
-          }}
-          repeat={5}
-        />
-      </LazyLoad>
+      {!isLoading && (
+        <LazyLoad>
+          <TypeAnimation
+            sequence={[hero?.name, 100, hero?.profession, 100]}
+            wrapper="p"
+            speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
+            deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
+            style={{
+              whiteSpace: 'pre-line',
+              fontWeight: '600',
+              marginBlock: '0.4rem 0.2rem',
+              textAlign: 'center',
+              fontSize: '1.5rem',
+            }}
+            repeat={5}
+          />
+        </LazyLoad>
+      )}
 
       <p className="font-medium text-center text-sm sm:text-lg text-muted-foreground max-w-xl">
-        {data?.intro}
+        {hero?.intro}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects" className="w-64">
-          <GradientButton text={data?.projectBtn} type="button" />
+          <GradientButton text={hero?.projectBtn} type="button" />
         </AnchorLink>
         <AnchorLink href="#contact" className="w-64">
-          <OutlineButton text={data?.aboutBtn} type="button" />
+          <OutlineButton text={hero?.aboutBtn} type="button" />
         </AnchorLink>
       </div>
       <AnchorLink href="#about">

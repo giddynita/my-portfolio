@@ -16,7 +16,7 @@ const SingleProject = ({ project, index }) => {
 
   return (
     <li
-      className={`grid md:grid-cols-2 gap-10 items-center ${
+      className={`grid md:grid-cols-2 gap-10 items-start ${
         index % 2 === 1 ? 'md:grid-flow-col-dense' : ''
       }`}
     >
@@ -37,23 +37,23 @@ const SingleProject = ({ project, index }) => {
 
         {/* Overlay Links */}
         <div className="absolute bottom-6 left-6 right-6 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="bg-background/90 text-foreground hover:bg-background  rounded-md hover:scale-104 ">
+          <button className="bg-background/90 text-foreground hover:bg-background  rounded-md hover:scale-105 ">
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-4 py-1"
+              className="flex items-center px-4 py-3"
             >
               <FiExternalLink className="h-4 w-4 mr-2" />
               Live Demo
             </a>
           </button>
-          <button className="bg-background/90 rounded-md hover:scale-104">
+          <button className="bg-background/90 rounded-md hover:scale-105">
             <a
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-4 py-1"
+              className="flex items-center px-4 py-3"
             >
               <FaGithub className="h-4 w-4 mr-2" />
               Code

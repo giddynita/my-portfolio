@@ -20,11 +20,12 @@ const Footer = () => {
         </p>
       </div>
       <div className="absolute -top-8 right-4">
-        <AnchorLink href="#index">
+        <AnchorLink href="#hero">
           <button
             type="button"
             className="bg-accent text-accent-foreground p-0.5 rounded-full text-2xl animate-bounce cursor-pointer"
           >
+            <span className="sr-only">go to top</span>
             <GoArrowUp />
           </button>
         </AnchorLink>
