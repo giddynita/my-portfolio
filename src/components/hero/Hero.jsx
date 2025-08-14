@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
+      className=" relative flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
     >
       <div className="mb-4">
         <Avatar img={hero?.image?.fields?.file?.url} isLoading={isLoading} />
