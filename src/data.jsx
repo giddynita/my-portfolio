@@ -10,12 +10,12 @@ export const navlinks = [
   { section: 'contact', href: '#contact' },
 ]
 
-export const filteredNavlinks = navlinks.map((item) => {
-  if (item.section == 'hero') {
-    return { ...item, section: '' }
-  }
-  return item
-})
+export const filteredNavlinks = [
+  { section: 'about', href: '#about' },
+  { section: 'skills', href: '#skills' },
+  { section: 'projects', href: '#projects' },
+  { section: 'contact', href: '#contact' },
+]
 
 export const socials = [
   {
