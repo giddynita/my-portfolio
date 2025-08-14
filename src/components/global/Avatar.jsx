@@ -8,12 +8,17 @@ const Avatar = ({ img, isLoading }) => {
       ) : (
         <figure className="w-30 h-30 md:w-38 md:h-38 rounded-full border-4 border-primary/20">
           <img
-            src={img}
+            src={`${img}?w=112&h=112&fit=thumb`}
+            srcSet={`
+      ${img}?w=112&h=112&fit=thumb 1x,
+      ${img}?w=224&h=224&fit=thumb 2x
+    `}
+            sizes="(max-width: 768px) 112px, 224px"
             alt="Gideon Onita"
-            loading="lazy"
-            width={251}
-            height={251}
+            width={112}
+            height={112}
             className="rounded-full aspect-square object-cover"
+            decoding="async"
           />
         </figure>
       )}

@@ -5,4 +5,24 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core React
+          react: ['react', 'react-dom'],
+          router: ['react-router-dom', 'react-lazyload'],
+          reactQuery: ['@tanstack/react-query'],
+
+          // Contentful
+          contentful: ['contentful'],
+
+          //Icons
+          icons: ['react-icons'],
+
+          toast: ['react-toastify'],
+        },
+      },
+    },
+  },
 })
