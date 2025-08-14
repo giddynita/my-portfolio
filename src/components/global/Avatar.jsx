@@ -13,7 +13,7 @@ const Avatar = ({ img, isLoading }) => {
             loading="lazy"
             width={251}
             height={251}
-            className="rounded-full w-full h-full object-cover "
+            className="rounded-full aspect-square object-cover"
           />
         </figure>
       )}

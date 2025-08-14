@@ -56,6 +56,7 @@ const Hero = () => {
       )}
 
       <AnchorLink href="#about">
+        <span className="sr-only">about</span>
         <IoArrowDown className="absolute  bottom-2 left-1/2 -translate-x-1/2  animate-bounce text-2xl w-6 h-6 text-accent" />
       </AnchorLink>
     </section>

@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <>
       <Header />
-      <main id="index container">
+      <main id="hero container">
         <Hero />
         {sectionSuspense(<About />)}
         {sectionSuspense(<Skills />)}
