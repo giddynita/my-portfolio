@@ -1,6 +1,5 @@
 import { IoArrowDown } from 'react-icons/io5'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { hero } from '../../data'
 import { lazy } from 'react'
 import LazyLoad from 'react-lazyload'
 import { TypeAnimation } from 'react-type-animation'
@@ -8,7 +7,6 @@ const Avatar = lazy(() => import('../global/Avatar'))
 import GradientButton from '../global/GradientButton'
 import OutlineButton from '../global/OutlineButton'
 import { useHeroContent } from '../../hooks'
-import SectionLoading from '../global/SectionLoading'
 
 const Hero = () => {
   const { data: hero, isLoading } = useHeroContent()

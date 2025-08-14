@@ -1,4 +1,4 @@
-import { navlinks } from '../../data'
+import { filteredNavlinks } from '../../data'
 import { useContext } from 'react'
 import { GlobalContext } from '../../assets/globalContext'
 
@@ -6,14 +6,6 @@ import MenuLink from './MenuLink'
 
 const Menu = () => {
   const { menu, menuRef } = useContext(GlobalContext)
-  const filteredNavlinks = useMemo(() => {
-    return navlinks.map((item) => {
-      if (item.section == 'index') {
-        return { ...item, section: '' }
-      }
-      return item
-    })
-  }, [])
 
   return (
     <div

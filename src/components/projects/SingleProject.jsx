@@ -37,7 +37,7 @@ const SingleProject = ({ project, index }) => {
 
         {/* Overlay Links */}
         <div className="absolute bottom-6 left-6 right-6 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="bg-background/90 text-foreground hover:bg-background  rounded-md hover:scale-105 ">
+          <button className="bg-primary/20 text-foreground hover:bg-primary  rounded-md hover:scale-105 ">
             <a
               href={liveUrl}
               target="_blank"
@@ -48,7 +48,7 @@ const SingleProject = ({ project, index }) => {
               Live Demo
             </a>
           </button>
-          <button className="bg-background/90 rounded-md hover:scale-105">
+          <button className="bg-primary/20 text-foreground hover:bg-primary rounded-md hover:scale-105">
             <a
               href={githubUrl}
               target="_blank"

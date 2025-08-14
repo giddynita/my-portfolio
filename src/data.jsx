@@ -1,6 +1,5 @@
 import { FaGithub } from 'react-icons/fa6'
 import { FaLinkedinIn } from 'react-icons/fa'
-import picture from './assets/images/giddynita.jpg'
 import { MdEmail, MdLocalPhone, MdLocationOn } from 'react-icons/md'
 
 export const navlinks = [
@@ -10,6 +9,13 @@ export const navlinks = [
   { section: 'projects', href: '#projects' },
   { section: 'contact', href: '#contact' },
 ]
+
+export const filteredNavlinks = navlinks.map((item) => {
+  if (item.section == 'index') {
+    return { ...item, section: '' }
+  }
+  return item
+})
 
 export const socials = [
   {
