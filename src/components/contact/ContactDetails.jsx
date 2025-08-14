@@ -10,10 +10,9 @@ const ContactDetails = ({ details }) => {
         <h4 className="font-semibold group-hover:text-accent md:text-lg">
           {title}
         </h4>
-        {href ? (
+        {href == '' ? (
           <a
             href={href}
-            on
             className="font-semibold text-sm md:text-base text-muted-foreground hover:text-accent
             "
           >

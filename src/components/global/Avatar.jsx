@@ -14,9 +14,9 @@ const Avatar = ({ img }) => {
           src={img}
           alt="Gideon Onita"
           loading="lazy"
-          width={300}
-          height={300}
-          className="rounded-full object-cover "
+          width={250}
+          height={250}
+          className="rounded-full w-full h-full object-cover "
         />
       </figure>
     </Suspense>

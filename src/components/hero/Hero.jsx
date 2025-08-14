@@ -5,19 +5,25 @@ import { lazy } from 'react'
 import LazyLoad from 'react-lazyload'
 import { TypeAnimation } from 'react-type-animation'
 const Avatar = lazy(() => import('../global/Avatar'))
-import avatar from '../../assets/images/giddynita.jpg'
 import GradientButton from '../global/GradientButton'
 import OutlineButton from '../global/OutlineButton'
+import { useHeroContent } from '../../hooks'
+import SectionLoading from '../global/SectionLoading'
 
 const Hero = () => {
-  const { name, profession, intro, aboutBtn, projectBtn } = hero
+  const { data, isLoading } = useHeroContent()
+
+  if (isLoading) {
+    return <SectionLoading />
+  }
+
   return (
     <section
       id="index"
       className=" relative bg-[url('./asets/images/hero-bg.jpg')] bg-cover flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
     >
       <div className="mb-4">
-        <Avatar img={avatar} />
+        <Avatar img={data?.image?.fields?.file?.url} />
       </div>
 
       <h2 className="text-3xl md:text-5xl font-bold tracking-wider gradient-text">
@@ -25,7 +31,7 @@ const Hero = () => {
       </h2>
       <LazyLoad>
         <TypeAnimation
-          sequence={[name, 100, profession, 100]}
+          sequence={[data?.name, 100, data?.profession, 100]}
           wrapper="p"
           speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
           deletionSpeed={{ type: 'keyStrokeDelayInMs', value: 200 }}
@@ -41,14 +47,14 @@ const Hero = () => {
       </LazyLoad>
 
       <p className="font-medium text-center text-sm sm:text-lg text-muted-foreground max-w-xl">
-        {intro}
+        {data?.intro}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
         <AnchorLink href="#projects" className="w-64">
-          <GradientButton text={projectBtn} type="button" />
+          <GradientButton text={data?.projectBtn} type="button" />
         </AnchorLink>
         <AnchorLink href="#contact" className="w-64">
-          <OutlineButton text={aboutBtn} type="button" />
+          <OutlineButton text={data?.aboutBtn} type="button" />
         </AnchorLink>
       </div>
       <AnchorLink href="#about">

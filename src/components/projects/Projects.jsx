@@ -21,7 +21,7 @@ const Projects = () => {
       featured: true,
     },
     {
-      id: 1,
+      id: 2,
       title: 'TaskFlow Dashboard',
       description:
         'A comprehensive project management dashboard built with React, TypeScript, and a modern design system. Features real-time collaboration, drag-and-drop task management, and advanced analytics.',
