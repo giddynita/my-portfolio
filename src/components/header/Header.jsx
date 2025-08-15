@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 header transition-transform transition-300 ${
+      className={`fixed top-0 w-full z-50 header transition-transform transition-150 ${
         !menu && 'shadow-lg'
       }  py-4 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
