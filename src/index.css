@@ -197,10 +197,4 @@
     box-shadow: var(--shadow-glass);
     transform: translateY(-2px);
   }
-  .z-index {
-    z-index: 0;
-  }
-  .z {
-    z-index: 1;
-  }
 }

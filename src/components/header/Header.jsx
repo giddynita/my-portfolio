@@ -71,7 +71,7 @@ const Header = () => {
           <ToggleMenu />
         </div>
         <Suspense fallback={null}>
-          <Menu />
+          <Menu activeSection={activeSection} />
         </Suspense>
       </div>
     </header>

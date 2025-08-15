@@ -4,7 +4,7 @@ import { GlobalContext } from '../../assets/globalContext'
 
 import MenuLink from './MenuLink'
 
-const Menu = () => {
+const Menu = ({ activeSection }) => {
   const { menu, menuRef } = useContext(GlobalContext)
 
   return (
@@ -15,7 +15,13 @@ const Menu = () => {
     >
       <ul className="flex flex-col capitalize text-center w-full">
         {filteredNavlinks.map((navlink) => {
-          return <MenuLink key={navlink.section} {...navlink} />
+          return (
+            <MenuLink
+              key={navlink.section}
+              navlink={navlink}
+              activeSection={activeSection}
+            />
+          )
         })}
       </ul>
     </div>
