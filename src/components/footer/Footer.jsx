@@ -6,11 +6,11 @@ import FooterNavlinks from '../navlinks/FooterNavlinks'
 
 const Footer = () => {
   return (
-    <footer className=" relative header pt-8 pb-6 mt-16  ">
+    <footer className=" relative header py-8 mt-16  ">
       <div className="container flex flex-col items-center space-y-2 ">
         <Logo />
         <FooterNavlinks />
-        <p className="flex flex-row items-center justify-center  mb-4 text-xs font-medium">
+        <p className="flex flex-row items-center justify-center text-xs font-medium">
           <span className=" flex items-center gap-1 text-muted-foreground pr-0.5">
             <FaCopyright />
             2025
