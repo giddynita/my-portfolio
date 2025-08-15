@@ -10,7 +10,7 @@ const About = () => {
     <section id="about" className=" pt-[80px] container">
       <Heading sectionTitle="about me" />
       <div className="space-y-8">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center flex-wrap gap-4">
           <Avatar img={about?.image?.fields?.file?.url} />
           <div>
             <h3 className="gradient-text text-2xl sm:text-3xl font-bold">
