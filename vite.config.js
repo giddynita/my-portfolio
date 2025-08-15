@@ -10,15 +10,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           // Core React
-          core: [
-            'react',
-            'react-dom',
-            'react-router-dom',
-            'react-lazyload',
-            '@tanstack/react-query',
-            'contentful',
-          ],
+          dom: ['react-dom'],
+          react: ['react'],
+          router: ['react-router-dom', 'react-lazyload'],
+          reactQuery: ['@tanstack/react-query'],
+
           // Contentful
+          contentful: ['contentful'],
 
           //Icons
           icons: ['react-icons'],
