@@ -17,6 +17,13 @@ export const filteredNavlinks = [
   { section: 'contact', href: '#contact' },
 ]
 
+export const heroData = {
+  name: "I'm Gideon Onita",
+  profession: "I'm a React Developer",
+  intro:
+    'I specialize in building speed-optimized, accessible, and SEO-driven web applications that deliver exceptional user experiences.',
+}
+
 export const socials = [
   {
     id: 'github',

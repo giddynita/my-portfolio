@@ -1,18 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { client } from './contentful'
 
-export const useHeroContent = () => {
-  const fetchedHero = async () => {
-    const content = await client.getEntries({ content_type: 'portfolioHero' })
-    return content.items[0].fields
-  }
-  const queryData = useQuery({
-    queryKey: ['portfolio-hero'],
-    queryFn: fetchedHero,
-  })
-
-  return queryData
-}
 export const useAboutContent = () => {
   const fetchedAbout = async () => {
     const content = await client.getEntries({ content_type: 'portfolioAbout' })
