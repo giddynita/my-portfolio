@@ -5,12 +5,8 @@ import { GlobalContext } from '../../assets/globalContext'
 const MenuLink = ({ section, href }) => {
   const { handleMenu } = useContext(GlobalContext)
   return (
-    <li>
-      <AnchorLink
-        href={href}
-        className=" py-4 text-sm font-medium transition-colors border-b last:border-b-0"
-        onClick={handleMenu}
-      >
+    <li className=" py-4 text-sm font-medium transition-colors border-b last:border-b-0">
+      <AnchorLink href={href} onClick={handleMenu}>
         {section}
       </AnchorLink>
     </li>

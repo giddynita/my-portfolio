@@ -20,10 +20,11 @@ const Hero = () => {
           src={heroImage}
           alt="Developer workspace"
           className="w-full h-full object-cover opacity-20"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
       </div>
-      <div className="space-y-8 flex flex-col items-center justify-center container z-50 animate-fade-in">
+      <div className="space-y-8 flex flex-col items-center justify-center container z-30 animate-fade-in">
         <div className="space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold tracking-wider gradient-text text-center">
             Welcome,
