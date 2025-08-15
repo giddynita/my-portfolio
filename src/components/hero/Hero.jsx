@@ -35,10 +35,14 @@ const Hero = () => {
           />
         </LazyLoad>
       )}
+      {isLoading ? (
+        <p className="max-w-xl py-12" />
+      ) : (
+        <p className="font-medium text-center text-sm sm:text-lg text-muted-foreground max-w-xl">
+          {hero?.intro}
+        </p>
+      )}
 
-      <p className="font-medium text-center text-sm sm:text-lg text-muted-foreground max-w-xl">
-        {hero?.intro}
-      </p>
       {hero?.projectBtn && hero?.aboutBtn && (
         <div className="flex flex-col sm:flex-row gap-4 items-center my-6">
           <AnchorLink href="#projects" className="w-64">
