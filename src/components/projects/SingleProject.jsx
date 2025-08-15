@@ -86,7 +86,7 @@ const SingleProject = ({ project, index }) => {
         </div>
 
         {/* Links */}
-        <div className=" flex gap-4">
+        <div className=" flex flex-wrap gap-4">
           <a
             href={liveUrl}
             target="_blank"
