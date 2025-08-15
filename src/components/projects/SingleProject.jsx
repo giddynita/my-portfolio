@@ -91,7 +91,7 @@ const SingleProject = ({ project, index }) => {
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-36"
+            className="w-full lg:w-48"
           >
             <GradientButton
               text="Live Demo"
@@ -103,7 +103,7 @@ const SingleProject = ({ project, index }) => {
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-32"
+            className="w-full lg:w-48"
           >
             <OutlineButton text="Code" icon={<FaGithub />} type="button" />
           </a>

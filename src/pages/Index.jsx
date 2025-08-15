@@ -9,14 +9,14 @@ const Skills = lazy(() => import('../components/skills/Skills'))
 const Projects = lazy(() => import('../components/projects/Projects'))
 const Contact = lazy(() => import('../components/contact/Contact'))
 const Footer = lazy(() => import('../components/footer/Footer'))
-const Hero = lazy(() => import('../components/hero/Hero'))
+import Hero from '../components/hero/Hero'
 
 const Index = () => {
   return (
     <>
       <Header />
       <main id="hero container">
-        {heroSectionSuspense(<Hero />)}
+        <Hero />
         {sectionSuspense(<About />)}
         {sectionSuspense(<Skills />)}
         {sectionSuspense(<Projects />)}
