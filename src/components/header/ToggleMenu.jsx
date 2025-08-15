@@ -11,6 +11,7 @@ const ToggleMenu = () => {
       className="text-2xl md:hidden text-secondary-foreground hover:bg-secondary rounded p-1 text-base-100 hover:scale-[1.05] cursor-pointer"
       onClick={handleMenu}
     >
+      <span className="sr-only">toggle menu</span>
       {menu ? (
         <LiaTimesSolid className="h-6 w-6 font-bold" />
       ) : (
