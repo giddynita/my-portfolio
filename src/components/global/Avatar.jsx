@@ -1,6 +1,4 @@
 const Avatar = ({ img, isLoading }) => {
-  console.log(img)
-
   return (
     <>
       {isLoading ? (
@@ -15,7 +13,8 @@ const Avatar = ({ img, isLoading }) => {
             width={136}
             height={136}
             className="rounded-full aspect-square object-fit"
-            decoding="async"
+            loading="eager"
+            fetchpriority="high"
           />
         </figure>
       )}

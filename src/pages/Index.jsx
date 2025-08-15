@@ -1,8 +1,5 @@
 import Header from '../components/header/Header'
-import {
-  heroSectionSuspense,
-  sectionSuspense,
-} from '../components/suspense/suspense'
+import { sectionSuspense } from '../components/suspense/suspense'
 import { lazy } from 'react'
 const About = lazy(() => import('../components/about/About'))
 const Skills = lazy(() => import('../components/skills/Skills'))

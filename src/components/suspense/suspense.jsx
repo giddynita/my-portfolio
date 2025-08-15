@@ -14,16 +14,3 @@ export const sectionSuspense = (Component) => (
     </Suspense>
   </LazyLoad>
 )
-export const heroSectionSuspense = (Component) => (
-  <LazyLoad>
-    <Suspense
-      fallback={
-        <div className="container h-[100vh] flex items-center justify-center">
-          <span className="loading loading-spin loading-sm "></span>
-        </div>
-      }
-    >
-      {Component}
-    </Suspense>
-  </LazyLoad>
-)
