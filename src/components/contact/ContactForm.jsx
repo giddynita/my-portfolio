@@ -1,12 +1,46 @@
+import { useState } from 'react'
 import FormInput from '../form/FormInput'
 import GradientButton from '../global/GradientButton'
+import { useNavigate } from 'react-router-dom'
 
 function ContactForm() {
+  const navigate = useNavigate()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(null)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
+
+    const form = e.target
+    const formData = new FormData(form)
+
+    formData.append('form-name', 'portfolio-contact')
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (response.ok) {
+        navigate('/thank-you')
+      } else {
+        setError('Form submission failed. Please try again.')
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <form
       name="portfolio-contact"
       method="post"
       className=" rounded-md space-y-8 p-6 hover-glow-primary"
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="portfolio-contact" />
       <h3 className="text-2xl md:text-3xl font-bold">Send a Message</h3>
@@ -42,7 +76,12 @@ function ContactForm() {
         />
       </div>
 
-      <GradientButton text="Send Message" type="submit" />
+      <GradientButton
+        text={isSubmitting ? 'Sending...' : 'Send a Message'}
+        type="submit"
+        isSubmitting={isSubmitting}
+      />
+      {error && <p className="text-red-600">{error}</p>}
     </form>
   )
 }
