@@ -13,8 +13,6 @@
   --color-card: var(--card);
   --color-card-glass: var(--card-glass);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -23,23 +21,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
   --shadow-shadow-primary: var(--shadow-primary);
 }
 
@@ -50,9 +33,6 @@
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(222.2 84% 4.9%);
   --card-glass: hsl(0 0% 100% / 0.8);
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
 
   --primary: hsl(271 91% 65%);
   --primary-foreground: hsl(0 0% 98%);
@@ -88,15 +68,6 @@
   --shadow-primary: 0 10px 40px hsl(271 91% 65% / 0.2);
   --shadow-accent: 0 10px 40px hsl(197 71% 52% / 0.2);
   --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.1);
-
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 .dark {
@@ -107,9 +78,6 @@
   --card: hsl(240 10% 3.9%);
   --card-foreground: hsl(0 0% 98%);
   --card-glass: hsl(240 10% 8% / 0.8);
-
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
 
   /* Vibrant gradient colors */
   --primary: hsl(271 91% 65%);
@@ -160,22 +128,6 @@
   /* Animations */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  --sidebar-background: 0 0% 98%;
-
-  --sidebar-foreground: 240 5.3% 26.1%;
-
-  --sidebar-primary: 240 5.9% 10%;
-
-  --sidebar-primary-foreground: 0 0% 98%;
-
-  --sidebar-accent: 240 4.8% 95.9%;
-
-  --sidebar-accent-foreground: 240 5.9% 10%;
-
-  --sidebar-border: 220 13% 91%;
-
-  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 @layer base {
@@ -195,6 +147,7 @@
         hsl(197 71% 52% / 0.05),
         transparent 50%
       );
+    font-family: 'Poppins', sans-serif;
   }
 
   html {
@@ -247,202 +200,4 @@
     box-shadow: var(--shadow-glass);
     transform: translateY(-2px);
   }
-
-  /* Animated background */
-  /* .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient-flow 6s ease infinite;
-  } */
-
-  /*   @keyframes gradient-flow {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  } */
-
-  /* Custom scrollbar */
-  /*   ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-glow));
-  } */
 }
-
-/* =================
-THEME
-====================
-*/
-/* .theme {
-  transition: all 0.3s;
-}
-.theme:hover {
-  transform: translateX(0%) translateY(-50%);
-  transition: all 0.5s;
-}
-.theme {
-  transform: translateX(50%) translateY(-50%);
-} */
-/* =================
-LANDING PAGE
-====================
-*/
-/* .landing {
-  font-family: 'Nunito', sans-serif;
-}
-.heading {
-  font-family: 'Josefin Sans', sans-serif;
-}
-.section {
-  padding-inline: 7%;
-} */
-/* =================
-LANDING PAGE- NAVBAR
-====================
-*/
-/* .navbar {
-  padding-inline: 6%;
-}
-.logo {
-  font-family: 'EB Garamond', serif;
-  transition: all 0.3s;
-}
-.nav-menu {
-  padding-inline: 6%;
-  transition: transform 0.3s;
-}
-.nav-link {
-  font-family: 'Nunito', sans-serif;
-}
-.nav-link::after {
-  content: '';
-  display: block;
-  top: 100%;
-  width: 0%;
-  height: 0.15rem;
-  border-radius: 4rem;
-  transition: all 0.2s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-.side-bar {
-  width: 20%;
-}
- */
-/* =================
-LANDING PAGE- HERO
-====================
-*/
-/* .move-down {
-  animation: bounce-down 2s ease-in-out infinite;
-}
-
-@keyframes bounce-down {
-  0% {
-    transform: translateY(-15px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-15px);
-  }
-} */
-/* =================
-LANDING PAGE- SKILLS
-====================
-*/
-/* .skill-card:hover .logo {
-  transform: scale(1.05);
-  filter: grayscale(0);
-}
-.skill-card:hover .card-level {
-  filter: grayscale(0);
-} */
-/* @media screen and (min-width: 425px) {
-  .skill-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (min-width: 640px) {
-  .skill-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
-
-/* =================
-LANDING PAGE- PORTFOLIO
-====================
-*/
-/* .project-link::after {
-  content: '';
-  left: 0;
-  transition: all 0.3s;
-}
-.project-card:hover .project-img {
-  transform: scale(1.01);
-}
-.project-card:hover .project-link::after {
-  width: 100%;
-}
-.project-card:hover .project-link {
-  color: white;
-} */
-
-/* =================
-LANDING PAGE- REVIEWS
-====================
-*/
-/* .slick-dots {
-  top: 115% !important;
-}
-.slick-dots li button:before {
-  color: var(--carouselColor) !important;
-  font-size: 8px !important;
-  padding-top: 2px;
-  width: 16px !important;
-  height: 16px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.slick-dots li.slick-active button:before {
-  border: 1px solid var(--carouselColor);
-  border-radius: 50%;
-}
-.carousel-single {
-  width: 95%;
-} */
-/* =================
-LANDING PAGE- FOOTER
-====================
-*/
-/* .animateUp {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
- */

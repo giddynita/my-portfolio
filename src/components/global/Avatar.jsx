@@ -12,7 +12,7 @@ const Avatar = ({ img, isLoading }) => {
             alt="Gideon Onita"
             width={136}
             height={136}
-            className="rounded-full aspect-square object-cover"
+            className="rounded-full aspect-square object-fit"
             decoding="async"
           />
         </figure>
