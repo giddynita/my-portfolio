@@ -6,7 +6,7 @@ import FooterNavlinks from '../navlinks/FooterNavlinks'
 
 const Footer = () => {
   return (
-    <footer className=" relative pt-10 pb-2 ">
+    <footer className=" relative header pt-8 pb-6 mt-16  ">
       <div className="container flex flex-col items-center space-y-2 ">
         <Logo />
         <FooterNavlinks />
