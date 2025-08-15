@@ -1,4 +1,6 @@
 const Avatar = ({ img, isLoading }) => {
+  console.log(img)
+
   return (
     <>
       {isLoading ? (
