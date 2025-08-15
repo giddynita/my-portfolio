@@ -5,7 +5,6 @@ import { TypeAnimation } from 'react-type-animation'
 import GradientButton from '../global/GradientButton'
 import OutlineButton from '../global/OutlineButton'
 import { useHeroContent } from '../../hooks'
-import Avatar from '../global/Avatar'
 
 const Hero = () => {
   const { data: hero, isLoading } = useHeroContent()
@@ -15,10 +14,6 @@ const Hero = () => {
       id="hero"
       className=" relative flex flex-col justify-center items-center gap-1 min-h-screen pt-[100px] pb-10 container"
     >
-      <div className="mb-4">
-        <Avatar img={hero?.image?.fields?.file?.url} isLoading={isLoading} />
-      </div>
-
       <h2 className="text-3xl md:text-5xl font-bold tracking-wider gradient-text">
         Welcome,
       </h2>
