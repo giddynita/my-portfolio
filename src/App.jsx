@@ -7,6 +7,7 @@ import Layout from './components/layout/Layout'
 import { ThemeProvider } from './components/theme/theme-provider'
 const Index = lazy(() => import('./pages/Index'))
 const Error = lazy(() => import('./pages/Error'))
+const ThankYou = lazy(() => import('./pages/ThankYou'))
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Index />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'thank-you',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ThankYou />
           </Suspense>
         ),
       },
