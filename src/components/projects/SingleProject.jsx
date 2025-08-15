@@ -36,7 +36,7 @@ const SingleProject = ({ project, index }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Overlay Links */}
-        <div className="absolute bottom-6 left-6 right-6 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="hidden absolute bottom-6 left-6 right-6 md:flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="bg-primary/20 text-foreground hover:bg-primary  rounded-md hover:scale-105 ">
             <a
               href={liveUrl}
