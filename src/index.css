@@ -29,12 +29,12 @@
 :root {
   /* Light theme colors */
   --background: hsl(0 0% 100%);
-  --foreground: hsl(222.2 84% 4.9%);
+  --foreground: #020817;
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(222.2 84% 4.9%);
+  --card-foreground: #020817;
   --card-glass: hsl(0 0% 100% / 0.8);
 
-  --primary: hsl(271 91% 65%);
+  --primary: #a855f7;
   --primary-foreground: hsl(0 0% 98%);
 
   --secondary: hsl(210 40% 96%);
@@ -43,7 +43,7 @@
   --muted: hsl(210 40% 96%);
   --muted-foreground: hsl(215.4 16.3% 46.9%);
 
-  --accent: hsl(197 71% 52%);
+  --accent: #2eaadc;
   --accent-foreground: hsl(0 0% 98%);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
@@ -65,8 +65,8 @@
   );
   --radius: 1rem;
   /* Shadows for light mode */
-  --shadow-primary: 0 10px 40px hsl(271 91% 65% / 0.2);
-  --shadow-accent: 0 10px 40px hsl(197 71% 52% / 0.2);
+  --shadow-primary: 0 10px 40px #a855f733;
+  --shadow-accent: 0 10px 40px #2eaadc33;
   --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.1);
 }
 
@@ -84,7 +84,7 @@
   --primary-foreground: hsl(0 0% 98%);
   --primary-glow: hsl(271 91% 75%);
 
-  --secondary: hsl(240 5% 15%);
+  --secondary: #242428;
   --secondary-foreground: hsl(0 0% 98%);
 
   --muted: hsl(240 5% 15%);
@@ -94,8 +94,6 @@
   --accent-foreground: hsl(0 0% 98%);
   --accent-glow: hsl(197 71% 62%);
 
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
 
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
