@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation'
 import GradientButton from '../global/GradientButton'
 import OutlineButton from '../global/OutlineButton'
 import { heroData } from '../../data'
-import heroImage from '../../assets/images/background.jpg'
+import heroImage from '../../assets/images/background.webp'
 
 const Hero = () => {
   const { name, profession, intro } = heroData
